@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+   <!-- SEO Meta Tags -->
+   <meta name="description"
+      content="Tivo is a HTML landing page template built with Bootstrap to help you crate engaging presentations for SaaS apps and convert visitors into users.">
+   <meta name="author" content="Inovatik">
+
+   <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
+   <meta property="og:site_name" content="" /> <!-- website name -->
+   <meta property="og:site" content="" /> <!-- website link -->
+   <meta property="og:title" content="" /> <!-- title shown in the actual shared post -->
+   <meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+   <meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+   <meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+   <meta property="og:type" content="article" />
+
+   <!-- Website Title -->
+   <title>Guideology - For Future Dental Students</title>
+
+   <!-- Styles -->
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext"
+      rel="stylesheet">
+   <link href="../css/bootstrap.css" rel="stylesheet">
+   <link href="../css/fontawesome-all.css" rel="stylesheet">
+   <link href="../css/swiper.css" rel="stylesheet">
+   <link href="../css/magnific-popup.css" rel="stylesheet">
+   <link href="../css/styles.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+   <!-- Favicon  -->
+   <link rel="icon" href="../images/icon.png">
+   <style type="text/css">
+      .navbar-nav {
+         margin-left: auto;
+      }
+
+      .text-secondary {
+         color: #3d5d6f;
+      }
+
+      .h4,
+      h4 {
+         font-size: 1.2rem;
+      }
+
+      h2 {
+         color: #333;
+      }
+
+      .fa,
+      .fas {
+         font-family: 'FontAwesome';
+         font-weight: 400;
+         font-size: 1.2rem;
+         font-style: normal;
+      }
+
+      .right-0 {
+         right: 0;
+      }
+
+      .top-0 {
+         top: 0;
+      }
+
+      .h-100 {
+         height: 100%;
+      }
+
+      a.text-secondary:focus,
+      a.text-secondary:hover {
+         text-decoration: none;
+         color: #22343e;
+      }
+
+      #accordion .fa-plus {
+         transition: -webkit-transform 0.25s ease-in-out;
+         transition: transform 0.25s ease-in-out;
+         transition: transform 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;
+      }
+
+      #accordion a[aria-expanded=true] .fa-plus {
+         -webkit-transform: rotate(45deg);
+         transform: rotate(45deg);
+      }
+   </style>
+   <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+   <script type="text/javascript">
+      let one = document.querySelector('#one');
+      let two = document.querySelector('#two');
+      let container_right = document.querySelector('#container_right');
+      let paragraph = document.querySelector('paragraph');
+
+      two.addEventListener('click', () => {
+         container_right.innerHTML = '<section  class="container my-5" id="maincontent"> <section id="accordion">  <a class="py-3 d-block h-100 w-100 position-relative z-index-1 pr-1 text-secondary border-top" aria-controls="faq-17" aria-expanded="false" data-toggle="collapse" href="#faq-17" role="button">  <div class="position-relative">  <h2 class="h4 m-0 pr-3">   What is Guideology? </h2> <div class="position-absolute top-0 right-0 h-100 d-flex align-items-center">  <i class="fa fa-plus"></i>  </div>  </div>  </a> </section></section>';
+
+
+
+      });
+   </script>
+</head>
+
+<body data-spy="scroll" data-target=".fixed-top">
+
+   <!-- Preloader -->
+   <div class="spinner-wrapper">
+      <div class="spinner">
+         <div class="bounce1"></div>
+         <div class="bounce2"></div>
+         <div class="bounce3"></div>
+      </div>
+   </div>
+   <!-- end of preloader -->
+
+
+   <!-- Navigation -->
+   <nav class="navbar navbar-expand-lg navbar-light navbar-custom fixed-top" style="padding: 0px 25px;">
+      <div class="container">
+         <a class="navbar-brand logo-image" href="../index.html"><img src="../images/guidology-color.png"
+               alt="alternative"></a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <br>
+            <ul class="navbar-nav">
+               <li class="nav-item">
+                  <a href="log-in.html" style="text-decoration: none;">
+                     <button type="button" class="loginbtn nav-item nav-link " id="loginbtn">Log In</button>
+                  </a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="sign-up.html">
+                     <button type="button" class="signupbtn nav-item nav-link" id="signupbtn"> Sign Up</button>
+                  </a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </nav>
+   <br>
+   <br>
+
+
+   <div class="container" style="padding-top: 80px;">
+      <h2>Have a Question? <br> Look Here </h2>
+      <br>
+      <br>
+      <input id="help_inp" type="text" placeholder="search"
+         style="border-radius: 30px;width: 300px;height: 34px; border: 1px solid #5680E9; padding: 10px; outline: none;">
+
+
+
+
+      <button id="help_btn"
+         style="background-color: #5680E9; color: #ffff; border-width: 0px;border-radius: 50px; padding: 4px 8px;margin-left: -36px;"><i
+            class="fa fa-search"></i></button>
+
+      <br>
+      <br>
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-3">
+               <div class="container-left">
+                  <ul class="list-group">
+                     <li class="list-group-item border-0"><a href="#" onclick="container1()">About Guideology</a></li>
+                     <li class="list-group-item border-0"><a href="#" onclick="container2()">Choose a plan</a></li>
+                     <li class="list-group-item border-0"><a href="#" onclick="container3()">Discount code</a></li>
+                     <li class="list-group-item border-0"><a href="#" onclick="container4()">our support system</a></li>
+
+                  </ul>
+               </div>
+            </div>
+            <div class="col-lg-9">
+               <div id="container_right" class="container-right">
+                  <section id="paragraph" class="container my-5" id="maincontent">
+                     <section id="accordion">
+                        <a class="py-3 d-block h-100 w-100 position-relative z-index-1 pr-1 text-secondary "
+                           aria-controls="faq-17" aria-expanded="false" data-toggle="collapse" href="#faq-17"
+                           role="button">
+                           <div class="position-relative">
+                              <h2 class="h4 m-0 pr-3">What is Guideology?</h2>
+                              <div class="position-absolute top-0 right-0 h-100 d-flex align-items-center">
+                                 <i class="fa fa-plus"></i>
+                              </div>
+                           </div>
+                        </a>
+                        <div class="collapse" id="faq-17">
+                           <div class="card-body border-0 p-0">
+                              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est</p>
+                              <br />
+                              <br />
+                              <p> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam.</p>
+                           </div>
+                        </div>
+                        <a class="py-3 d-block h-100 w-100 position-relative z-index-1 pr-1 text-secondary border-top"
+                           aria-controls="faq-18" aria-expanded="false" data-toggle="collapse" href="#faq-18"
+                           role="button">
+                           <div class="position-relative">
+                              <h2 class="h4 m-0 pr-3">What does Guideology offer?</h2>
+                              <div class="position-absolute top-0 right-0 h-100 d-flex align-items-center">
+                                 <i class="fa fa-plus"></i>
+                              </div>
+                           </div>
+                        </a>
+                        <div class="collapse" id="faq-18" >
+                           <div class="card-body border-0 p-0">
+                              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est</p>
+                              <br />
+                              <br />
+                              <p> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam.</p>
+                           </div>
+                        </div>
+                        <a class="py-3 d-block h-100 w-100 position-relative z-index-1 pr-1 text-secondary border-top"
+                           aria-controls="faq-19" aria-expanded="false" data-toggle="collapse" href="#faq-19"
+                           role="button">
+                           <div class="position-relative">
+                              <h2 class="h4 m-0 pr-3">Why was Guideology created?</h2>
+                              <div class="position-absolute top-0 right-0 h-100 d-flex align-items-center">
+                                 <i class="fa fa-plus"></i>
+                              </div>
+                           </div>
+                        </a>
+                        <div class="collapse" id="faq-19">
+                           <div class="card-body border-0 p-0">
+                              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est</p>
+                              <br />
+                              <br />
+                              <p> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam.</p>
+                           </div>
+                        </div>
+                     </section>
+                  </section>
+
+               </div>
+               <div id="container_right" class="container-right">
+
+               </div>
+
+            </div>
+
+         </div>
+      </div>
+
+
+
+
+   </div>
+
+
+
+
+
+
+   <!--rest-->
+
+ 	<!-- Footer start -->
+    <div id="footer-fix-id" style="max-width: 1920px; margin-top: 160px">
+      <div class="row g2 footer-og m-3" style="margin: 100px 0px;">
+         <div class="col-lg-2 footer-fst">
+           <a href="../index.html"><img src="../images/footerlogo.png"> </a>
+            <ul>
+               <li style="margin-top: 30px;">
+                  <button class="btn-android"><img src="../images/android-icon.png" style="width: 37px; height: 33px; float: left; margin-left:15px;"><span  class="android-text">Download</span></button>
+               </li>
+               <liv>
+                  <button class="btn-ios" style="margin-top: 15px;"><img src="../images/ios-logo.png" style="width: 37px; height: 33px; float: left; margin-left:15px; margin-top: 20;"><span  class="android-text">Download</span></button>
+               </liv>
+            </ul>
+         </div>
+         <div class="col-lg-2 footer-fst" id="footer_fst">
+            <ul>
+               Products
+              <a href="./selectaguide.html"> <li class="footer-gap">Pre-Dental Guide</li></a>
+              <a href="./prepharmacyguide.html"> <li>Pre-Pharmacy Guide</li></a>
+               <a href="./premedicalguide.html"><li>Pre-Medical Guide</li></a>
+               <a href="./preundergradguide.html"><li>Pre-Undergrad Guide</li></a>
+               <a href="./referafreiend.html"><li>Refer A Friend</li></a>
+            </ul>
+            <ul>
+               Other
+               <a href="./termsofuse.html"><li class="footer-gap">Terms of Use</li></a>
+               <a href="./privacypolicy.html"><li>Privacy Policy</li></a>
+            </ul>
+         </div>
+         <div class="col-lg-2 footer-fst">
+            <ul>
+               About Guideology
+               <a href="./missionstatement.html"><li class="footer-gap">Our Mission Statement</li></a>
+               <a href="./studentreviews.html"> <li>Student reviews</li> </a>
+               <a href="./ourteam.html"><li>Our Team</li></a>
+               <li><br></li>
+               <li><br></li>
+            </ul>
+            <ul>
+               Business Inquiries
+               <a href="./contactus.html"><li class="footer-gap">Contact us</li></a>
+               <a href="./collaborate.html"><li>Collaborations</li></a> 
+               <a href="./affiliateprogram.html"> <li>Affiliate Program</li></a>
+            </ul>
+         </div>
+         <div class="col-lg-2 footer-fst">
+            <ul>
+               Support
+               <a href="./contactusforsupport.html"><li class="footer-gap">Contact us</li></a>
+               <a href="./helpcenter.html"><li>Help Center</li></a>
+              <a href="./forum/index.html"> <li>Forums</li> </a>
+               <li><br></li>
+               <li><br></li>
+            </ul>
+            <ul>
+               Social
+               <li class="footer-gap">Tiktok</li>
+               <li>Instagram</li>
+            </ul>
+         </div>
+         <div class="col-lg-3 footer-fst">
+            <ul>
+               Subscribe for Updates
+               <li class="footer-gap">
+                  <input type="text" class="newsletter-box" style="padding: 10px;" placeholder="Phone Number">
+               </li>
+               <li>
+                  <button type="submit" class="subscribe">Subscribe</button>
+               </li>
+            </ul>
+         </div>
+      </div>
+      <div class="row m-3">
+         <div class="col-lg-12 copyright-txt">© 2022 Guideology</div>
+      </div>
+   </div>
+   <!-- Footer end-->
+
+   <!-- Scripts -->
+   <script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+   <script src="../js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
+   <script src="../js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+   <script src="../js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+   <script src="../js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+   <script src="../js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
+   <script src="../js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
+   <script src="../js/scripts.js"></script> <!-- Custom scripts -->
+</body>
+<script>
+   const container_right1 = document.getElementById('container_right');
+   function container1() {
+      const a = container_right1.innerHTML = '<section id="accordion"><a class="py-3 d-block h-100 w-100 position-relative z-index-1 pr-1 text-secondary " aria-controls="faq-17" aria-expanded="false" data-toggle="collapse" href="#faq-17" role="button"><div class="position-relative"><h2 class="h4 m-0 pr-3">What is Guideology?</h2><div class="position-absolute top-0 right-0 h-100 d-flex align-items-center"><i class="fa fa-plus"></i></div></div></a><div class="collapse" id="faq-17" style=""><div class="card-body border-0 p-0"><p>Custom gear can be ordered through our contact form.Additional fees may apply.</p></div></div><a class="py-3 d-block h-100 w-100 position-relative z-index-1 pr-1 text-secondary border-top border-" aria-controls="faq-18" aria-expanded="false" data-toggle="collapse" href="#faq-18" role="button"><div class="position-relative"><h2 class="h4 m-0 pr-3">What does Guideology offer?</h2><div class="position-absolute top-0 right-0 h-100 d-flex align-items-center"><i class="fa fa-plus"></i></div></div></a><div class="collapse" id="faq-18" style=""><div class="card-body border-0 p-0"><p>Our official mission statement is lorem ipsum dolor sit.</p><p></p></div></div><a class="py-3 d-block h-100 w-100 position-relative z-index-1 pr-1 text-secondary border-top border-bottom" aria-controls="faq-19" aria-expanded="false" data-toggle="collapse" href="#faq-19" role="button"><div class="position-relative"><h2 class="h4 m-0 pr-3">Why was Guideology created?</h2><div class="position-absolute top-0 right-0 h-100 d-flex align-items-center"><i class="fa fa-plus"></i></div></div></a><div class="collapse" id="faq-19" style=""><div class="card-body border-0 p-0"><p>The purpose of LunarXP is to give you the best Mars experience!</p><p></p></div></div><div class="collapse" id="faq-20"><div class="card-body border-0 p-0"><p>The best email for any inquiries is email@email.com!</p><p></p></div></div><div class="collapse" id="faq-21"><div class="card-body border-0 p-0"><p>Lorem ipsum dolor sit!</p><p></p></div></div><div class="collapse" id="faq-22"><div class="card-body border-0 p-0"><p>The best time to call is 24/7!We are always available to answer any questions.</p><p></p></div></div></section></section>'
+
+
+   }
+   const container_right2 = document.getElementById('container_right');
+   function container2() {
+      const b = container_right2.innerHTML = '<section id="paragraph" class="container my-5" id="maincontent"><section id="accordion"><a class="py-3 d-block h-100 w-100 position-relative z-index-1 pr-1 text-secondary " aria-controls="faq-17" aria-expanded="false" data-toggle="collapse" href="#faq-17" role="button"><div class="position-relative"><h2 class="h4 m-0 pr-3">Free to Use </h2><div class="position-absolute top-0 right-0 h-100 d-flex align-items-center"><i class="fa fa-plus"></i></div></div></a><div class="collapse" id="faq-17" style=""><div class="card-body border-0 p-0"><p>Custom gear can be ordered through our contact form. Additional fees may apply.</p></div></div><a class="py-3 d-block h-100 w-100 position-relative z-index-1 pr-1 text-secondary border-top border-bottom" aria-controls="faq-18" aria-expanded="false" data-toggle="collapse" href="#faq-18" role="button"><div class="position-relative"><h2 class="h4 m-0 pr-3">Premium Content </h2><div class="position-absolute top-0 right-0 h-100 d-flex align-items-center"><i class="fa fa-plus"></i></div></div></a><div class="collapse" id="faq-18" style=""><div class="card-body border-0 p-0"><p>Our official mission statement is lorem ipsum dolor sit.</p><p></p></div></div></section></section>'
+      console.log('a', a)
+   }
+   const container_right3 = document.getElementById('container_right');
+   function container3() {
+      const c = container_right3.innerHTML = '<section id="paragraph" class="container my-5" id="maincontent"><section id="accordion"><a class="py-3 d-block h-100 w-100 position-relative z-index-1 pr-1 text-secondary " aria-controls="faq-17" aria-expanded="false" data-toggle="collapse" href="#faq-17" role="button"><div class="position-relative"><h2 class="h4 m-0 pr-3"> Collaborations</h2><div class="position-absolute top-0 right-0 h-100 d-flex align-items-center"><i class="fa fa-plus"></i></div></div></a><div class="collapse" id="faq-17" style=""><div class="card-body border-0 p-0"><p>Custom gear can be ordered through our contact form. Additional fees may apply.</p></div></div><a class="py-3 d-block h-100 w-100 position-relative z-index-1 pr-1 text-secondary border-top border-bottom" aria-controls="faq-18" aria-expanded="false" data-toggle="collapse" href="#faq-18" role="button"><div class="position-relative"><h2 class="h4 m-0 pr-3">Affiliate Programs </h2><div class="position-absolute top-0 right-0 h-100 d-flex align-items-center"><i class="fa fa-plus"></i></div></div></a><div class="collapse" id="faq-18" style=""><div class="card-body border-0 p-0"><p>Our official mission statement is lorem ipsum dolor sit.</p><p></p></div></div></section></section>'
+   }
+   const container_right4 = document.getElementById('container_right');
+   function container4() {
+      const d = container_right3.innerHTML = '<section id="paragraph" class="container my-5" id="maincontent"><section id="accordion"><a class="py-3 d-block h-100 w-100 position-relative z-index-1 pr-1 text-secondary " aria-controls="faq-17" aria-expanded="false" data-toggle="collapse" href="#faq-17" role="button"><div class="position-relative"><h2 class="h4 m-0 pr-3">Asking Questions </h2><div class="position-absolute top-0 right-0 h-100 d-flex align-items-center"><i class="fa fa-plus"></i></div></div></a><div class="collapse" id="faq-17" style=""><div class="card-body border-0 p-0"><p>Custom gear can be ordered through our contact form. Additional fees may apply.</p></div></div><a class="py-3 d-block h-100 w-100 position-relative z-index-1 pr-1 text-secondary border-top border-bottom" aria-controls="faq-18" aria-expanded="false" data-toggle="collapse" href="#faq-18" role="button"><div class="position-relative"><h2 class="h4 m-0 pr-3">Student Forums </h2><div class="position-absolute top-0 right-0 h-100 d-flex align-items-center"><i class="fa fa-plus"></i></div></div></a><div class="collapse" id="faq-18" style=""><div class="card-body border-0 p-0"><p>Our official mission statement is lorem ipsum dolor sit.</p><p></p></div></div></section></section>'
+   }
+</script>
+
+</html>

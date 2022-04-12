@@ -1,0 +1,313 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+
+
+.mycol{
+    display: block;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mycol>img{
+    height: 300px;
+    width: auto;
+    display: block;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text-1{
+    
+    text-align: center;
+    width: 1000px;
+    display: block;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+@media (max-width: 400px) and (min-width: 0px){
+    .text-1{
+    text-align: center;
+    width: 340px;
+    display: block;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+}
+
+@media (max-width: 800px) and (min-width: 400px){
+    .text-1{
+    text-align: center;
+    width: 600px;
+    display: block;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+}
+
+@media (max-width: 1200px) and (min-width: 800px){
+    .text-1{
+    text-align: center;
+    width: 900px;
+    display: block;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+}
+
+
+
+.input-1>input{
+    display: block;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    outline: none;
+    top: 820px;
+    left: 650px;
+    width: 450px;
+    height: 60px;
+    background: #5680E9 0% 0% no-repeat padding-box;
+    border-radius: 30px;
+    opacity: 1;
+}
+
+@media (max-width: 400px){
+    .input-1>input{
+        display: block;
+        margin-top: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        border: none;
+        outline: none;
+        top: 820px;
+        left: 650px;
+        width: 340px;
+        height: 60px;
+        background: #5680E9 0% 0% no-repeat padding-box;
+        border-radius: 30px;
+        opacity: 1;
+    }
+
+}
+
+@media (max-width: 800px) and (min-width: 400px){
+    .input-1>input{
+     display: block;
+        margin-top: 30px;
+        margin-left: 50px;
+        margin-right: 50px;
+        border: none;
+        outline: none;
+        top: 820px;
+        left: 650px;
+        width: 600px;
+        height: 60px;
+        background: #5680E9 0% 0% no-repeat padding-box;
+        border-radius: 30px;
+        opacity: 1;
+    }
+    .share_icon {
+        margin-left: -105px !important;
+        margin-right: 50px;
+    }
+}
+
+@media (max-width: 1200px) and (min-width: 800px){
+    .input-1>input{
+        display: block;
+           margin-top: 30px;
+           margin-left: 50px;
+           margin-right: 50px;
+           border: none;
+           outline: none;
+           top: 820px;
+           left: 650px;
+           width: 900px;
+           height: 60px;
+           background: #5680E9 0% 0% no-repeat padding-box;
+           border-radius: 30px;
+           opacity: 1;
+       }
+}
+
+.input-1>::placeholder {
+    color: white;
+  }
+
+
+  .circle{
+    top: 804px;
+    left: 1044px;
+    width: 40px;
+    height: 40px;
+    background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    opacity: 1;
+  }
+
+  .social{
+      display: flex;
+      margin-left: 450px;
+  }
+
+  @media (max-width: 400px) and (min-width: 0px){
+    .social{
+    text-align: center;
+    width: 340px;
+    display: block;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+}
+
+@media (max-width: 800px) and (min-width: 400px){
+    .social{
+        text-align: center;
+        width: 600px;
+        display: block;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        }
+}
+
+@media (max-width: 1200px) and (min-width: 800px){
+    .social{
+        text-align: center;
+        width: 900px;
+        display: block;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        }
+}
+
+
+
+.social-0{
+    display: flex;
+}
+
+@media (max-width: 400px) and (min-width: 0px){
+    .social-0{
+    margin-left: 70px;
+    }
+}
+
+@media (max-width: 800px) and (min-width: 400px){
+    .social-0{
+        margin-left: 200px;
+        }
+}
+
+@media (max-width: 1200px) and (min-width: 800px){
+    .social-0{
+        margin-left: 350px;
+        }
+}
+
+
+  .social-1{
+      margin-left: 45px;
+    margin-top: 25px;
+    padding: 18px;
+    width: 60px;
+    height: 60px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 22px 30px #5680E929;
+    opacity: 1;
+    border-radius: 100px;
+  }
+  .share_icon{
+    margin-left: -55px;
+    margin-top: 37px;
+    padding: 9px 12px;
+    width: 45px;
+    height: 45px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 22px 30px #5680E929;
+    opacity: 1;
+    border-radius: 100px;
+  }
+
+
+
+  /* <------------------Pre Dental Page Start-----------------> */
+
+  .select{
+      text-align: center;
+      font-weight: 700;
+      margin-top: 150px;
+      font-size: 42px;
+
+  }
+
+  .main-btn{
+      margin-top: 80px;
+      margin-left: 300px;
+  }
+
+
+  .button-0{
+      display: flex;
+  }
+
+  @media (max-width: 500px){
+    .button-0{
+        display: block;
+        margin-left: -300px;
+    }
+  
+
+  }
+
+  .button-1{
+      margin: 50px 0px 0px 50px ;
+  }
+
+  .button-1>button{
+    width: 400px;
+    height: 120px; 
+    background: #5680E9 0% 0% no-repeat padding-box;
+    box-shadow: 0px 30px 40px #5680E980;
+    border-radius: 20px;
+    opacity: 1;
+    border: none;
+    color: #FFFFFF;
+    font-size: 22px;
+    font-weight: 600;
+  }
+
+  .button-2{
+    margin: 50px 0px 0px 50px ;
+}
+
+.button-2>button{
+    width: 400px;
+    height: 120px; 
+    background: #5680E9 0% 0% no-repeat padding-box;
+    box-shadow: 0px 30px 40px #5680E980;
+    border-radius: 20px;
+    opacity: 1;
+    border: none;
+    color: #FFFFFF;
+    font-size: 22px;
+    font-weight: 600;
+  }
