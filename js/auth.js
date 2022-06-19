@@ -1,21 +1,13 @@
-function onSubmit(){
-  return(
-    false
-  )
+
+function showPassword() {
+  var x = document.getElementById("password");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
 }
 
-    function clickMe() {
-        // program = document.getElementById("program").value;
-        // full_name = document.getElementById('full_name').value;
-        // phone_number = document.getElementById('phone_number').value;
-        // email = document.getElementById('email').value;
-        // username = document.getElementById('username').value;
-        // password = document.getElementById('password').value;
-    
-        // console.log(`fnae: ${full_name} phone : ${phone_number} email : ${email} username : ${username} password : ${password}`)
-        //          }
-        alert('click')
-    }
   
 // console.log(firebase.database)
 
@@ -26,87 +18,101 @@ function onSubmit(){
   const database = firebase.database()
   
   // Set up our register function
-  function register () {
-    // Get all our input fields
-    program = document.getElementById("program").value;
-    full_name = document.getElementById('full_name').value;
-    phone_number = document.getElementById('phone_number').value;
-    email = document.getElementById('email').value;
-    username = document.getElementById('username').value;
-    password = document.getElementById('password').value;
-  
-    // Validate input fields
-    if (validate_email(email) == false || validate_password(password) == false) {
-      alert('Email or Password is Incorrect!!')
-      return
-      // Don't continue running the code
-    }
-    if (validate_field(full_name) == false || validate_field(program) == false || validate_field(phone_number) == false || validate_field(username) == false) {
-      alert('One or More Extra Field is Incorrect!!')
-      return
-    }
+function register () {
+
    
-    // Move on with Auth
-    auth.createUserWithEmailAndPassword( email, password)
-    .then(function() {
-      // Declare user variable
-      var user = auth.currentUser
-  
-      // Add this user to Firebase Database
-      var database_ref = database.ref()
-  
-      // Create User data
-      var user_data = {
-        full_name : full_name,
-        username : username,
-        email : email,
-        program : program,
-        phone_number : phone_number,
-        // last_login : Date.now()
-      }
-  
-      // Push to Firebase Database
-      database_ref.child('users/' + user.uid).set(user_data)
-  
-      // DOne
-      alert('User Created Sucessfully!!')
-    })
-    .catch(function(error) {
-      // Firebase will use this to alert of its errors
-      var error_code = error.code
-      var error_message = error.message
-  
-      alert(error_message)
-    })
-  }
+ // Get all our input fields
+program = document.getElementById("program").value;
+full_name = document.getElementById('full_name').value;
+phone_number = document.getElementById('phone_number').value;
+email = document.getElementById('email').value;
+username = document.getElementById('username').value;
+password = document.getElementById('password').value;
 
-//   var ref = firebase.database().ref();
 
-// ref.on("value", function(snapshot) {
-//    console.log(snapshot.val());
-// }, function (error) {
-//    console.log("Error: " + error.code);
-// });
-
-var playersRef = firebase.database().ref("users/");
-
-playersRef.on("child_added", function(data, prevChildKey) {
-   var newPlayer = data.val();
-   console.log("full_name: " + newPlayer.full_name);
-//    console.log("age: " + newPlayer.age);
-//    console.log("number: " + newPlayer.number);
-//    console.log("Previous Player: " + prevChildKey);
+// Validate input fields
+if (validate_email(email) === false || validate_password(password) === false) {
+alert('Email or Password is Incorrect!!')
+return
+// Don't continue running the code
+}
+if (validate_field(full_name) == "" || validate_field(program) == "" || validate_field(phone_number) == "" || validate_field(username) == "") {
+alert('One or More Extra Field is Empty!!')
+return
+}
+// Move on with Auth
+auth.createUserWithEmailAndPassword( email, password)
+.then(function(user) {
+console.log(`Testing ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, ${firebase.auth().currentUser.uid}`);
+console.log('User!!!!!!!!!!!!!!', user)
+firebase.auth().currentUser.sendEmailVerification()
+.then(() => {
+alert('Send Verification email')
+}).catch((error) => {
+console.log(error.message)
 });
 
-  
+// Add this user to Firebase Database
+var database_ref = database.ref()
+
+userUID = firebase.auth().currentUser.uid
+// Create User data
+var user_data = {
+full_name : full_name,
+username : username,
+email : email,
+program : program,
+phone_number : phone_number,
+password: password,
+uid: userUID,
+// last_login : Date.now()
+}
+
+// Push to Firebase Database
+database_ref.child('registerUsers/' + userUID).set(user_data)
+
+full_name = "";
+email = "";
+phone_number = "";
+password = "";
+username = "";
+
+// DOne
+alert('User Created Sucessfully!!')
+window.location.href = 'verification.html'
+}).catch(function(error) {
+// Firebase will use this to alert of its errors
+var error_code = error.code
+var error_message = error.message
+
+alert(error_message)
+})
+
+
+}
+
+  function writeUserData(user) {
+    firebase.database().ref('Testingusers/' + user.uid).set(testuser).catch(error => {
+        console.log('Error coming from testing ===============>>>>>>>>>>>', error.message)
+    });
+}
+
+var userRef = firebase.database().ref("registerUsers/");
+console.log(`UserRef =>>> ${userRef}`)
+
+userRef.on("child_added", function(data, prevChildKey) {
+
+   var newUser = data.val();
+  //  console.log("full_name: " + newUser.email);
+
+});
+
+
+
   // Set up our login function
   function login () {
-    // Get all our input fields
-    username = newPlayer.username;
     email = document.getElementById('email').value;
     password = document.getElementById('password').value;
-  
-    console.log(`userName ======== ${username}`)
     // Validate input fields
     if (validate_email(email) == false || validate_password(password) == false) {
       alert('Email or Password is Incorrect!!')
@@ -114,33 +120,52 @@ playersRef.on("child_added", function(data, prevChildKey) {
       // Don't continue running the code
     }
   
-    auth.signInWithEmailAndPassword(email, password)
-    .then(function() {
-      // Declare user variable
-      var user = auth.currentUser
-  
-      // Add this user to Firebase Database
-      var database_ref = database.ref()
-  
-      // Create User data
-      var user_data = {
-        last_login : Date.toString()
-      }
-  
-      // Push to Firebase Database
-      database_ref.child('users/' + user.uid).update(user_data)
-  
-      // DOne
-      alert('User Logged In!!')
-  
-    })
-    .catch(function(error) {
-      // Firebase will use this to alert of its errors
-      var error_code = error.code
-      var error_message = error.message
-  
-      alert(error_message)
-    })
+    var user = firebase.auth().currentUser
+
+    // if (user.uid) {
+    //   windows.location.href = 'collaborate.html'
+    //   console.log(`User UID ========== ${user.uid}`)
+    // }else{
+    //   alert('abcd')
+    //   window.location.href = 'login.html'
+    // }
+    
+
+    if (user.emailVerified) {
+      // window.location.href = 'login.html'
+      auth.signInWithEmailAndPassword(email, password)
+      .then(function() {
+        // Declare user variable
+        var user = auth.currentUser
+    
+        // Add this user to Firebase Database
+        var database_ref = database.ref()
+    
+        // Create User data
+        var user_data = {
+          // last_login : Date.toString()
+        }
+    
+        // Push to Firebase Database
+        database_ref.child('registerUsers/' + user.uid).update(user_data);
+    
+        // DOne
+        // alert('User Logged In!!')
+        window.location.href = 'congratulation.html'
+    
+      })
+      .catch(function(error) {
+        // Firebase will use this to alert of its errors
+        var error_code = error.code
+        var error_message = error.message
+        document.getElementById('error').innerHTML = error_message
+        // alert(error_message)
+      })
+    }else{
+      window.location.href = 'verification.html'
+    }
+    
+   
   }
   
   
@@ -168,7 +193,7 @@ playersRef.on("child_added", function(data, prevChildKey) {
   }
   
   function validate_field(field) {
-    if (field == null) {
+    if (field === null) {
       return false
     }
   
@@ -178,3 +203,80 @@ playersRef.on("child_added", function(data, prevChildKey) {
       return true
     }
   }
+function data() {
+  var leadsRef = database.ref('registerUsers');
+  var dashboardUsername = document.getElementById('dashboard_user_name');
+  leadsRef.once('value', function(snapshot) {
+      snapshot.forEach(function(childSnapshot) {
+        var childKey = childSnapshot.key;
+        var childData = childSnapshot.val();
+        // dashboardUsername.innerHTML = `<div> ${childData.username} ! </div>`
+        // console.log(`childDAta: ${childData.email}`)
+        // console.log(`Key: ${childKey}`)
+      });
+  });
+}
+
+data()
+
+
+const logOut = () => {
+  firebase.auth().signOut().then(() => {
+    // Sign-out successful.
+    alert('User Logout');
+    // window.location.href = 'login.html'
+  }).catch((error) => {
+    // An error happened.
+  });
+}
+
+// Forget Password
+
+function forgotPass(){
+  const email = document.getElementById("email").value
+  firebase.auth().sendPasswordResetEmail(email)
+  .then(() => {
+      alert("Reset link sent to your email id")
+  })
+  .catch((error) => {
+      // document.getElementById("error").innerHTML = error.message
+      console.log(`Error =====> ${error.message}`)
+  });
+}
+
+
+
+// firebase.auth().onAuthStateChanged((user) => {
+//   if (user) {
+//     // User logged in already or has just logged in.
+//     console.log(user.uid);
+//   } else {
+//     // User not logged in or has just logged out.
+//   }
+// });
+
+
+
+
+
+// function getUserData(uid) {
+//   userUID = firebase.auth().currentUser.uid
+//   firebase.database().ref('registerUsers/' + uid).once("value", snap => {
+//       console.log(snap.val())
+//   })
+// }
+
+// getUserData()
+
+
+
+
+
+
+
+
+
+// 33333333333333333######################################3
+// try {
+
+   

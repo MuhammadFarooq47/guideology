@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Tivo is a HTML landing page template built with Bootstrap to help you crate engaging presentations for SaaS apps and convert visitors into users.">
-    <meta name="author" content="Inovatik">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
     <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
 	<meta property="og:site_name" content="" /> <!-- website name -->
@@ -19,7 +19,7 @@
 
     <!-- Website Title -->
     <title>Guideology - For Future Dental Students</title>
-    <!-- Tivo -->
+
     
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext" rel="stylesheet">
@@ -31,6 +31,8 @@
       <link href="../css/styles.css" rel="stylesheet">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+      <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-database.js"></script>
 	<!-- Favicon  -->
     <link rel="icon" href="../images/icon.png">
 	<style type="text/css">
@@ -41,6 +43,7 @@
 display: flex;
 padding: 0;
 margin: 0;
+margin-top: 10px;
 }
 
 .select_ratings li {
@@ -73,8 +76,32 @@ content: "\2605";
 .select_ratings-item:hover ~ .select_ratings-item::before {
 content: "\2606";
 }
-
-      </style>
+@media only screen and (min-width: 450px) and (max-width: 850px) {
+        .card{
+         min-width: 102% !important;
+    margin-left: 27px !important;
+    
+        }
+   }
+@media only screen and (min-width: 300px) and (max-width: 750px) {
+        .uname-box{
+        width: 270px !important;
+        margin-left: -15px;
+        }
+        .submit_btn{
+           margin-left: 0px !important;
+        }
+        #reviews_heading{
+           margin-left: 0px !important;
+        }
+        .select_ratings{
+           margin-left: 95px !important;
+           margin-top: -20px !important;
+           margin-bottom: -20px !important;
+        }
+   }
+  
+</style>
 </head>
 <body data-spy="scroll" data-target=".fixed-top">
     
@@ -122,15 +149,15 @@ content: "\2606";
             <span class="fa fa-star checked"></span>
             <span class="fa fa-star checked"></span>
             <span class="fa fa-star checked"></span>
-            <p style="margin-left: 20px;"> Total <strong> 180 </strong> Reviews  </p>
+            <p style="margin-left: 20px; font-size: 20px; margin-top: -5px;"><strong> 180 Total  Reviews </strong> </p>
          </div>
-        <!-- The Guideology team works tirelessly to ensure all of our students are provided with up-to-date and accurate material that will guide them through their preferred careers. Our team was carefully hand-picked to ensure that our students will have all the knowledge they need. Guideology is a professional team of designers, developers, writers, students, and teachers.     -->
     </p>
     </div>
-      <div class="cont-ourteam" id="reviews_main">
+    <!-- For Desktop -->
+      <div style="height: 600px !important;" class="cont-ourteam d-md-none d-lg-block" id="reviews_main">
         <div class="mx-4" style="max-width: 1920px;margin-left: 70px !important;">
            <div class="row">
-              <div class="col-lg-3">
+              <div class="col-lg-3 col-" >
                  <div class="card-margin team-box">
                     <div class="image" style="margin-left: 31px; padding-top: 21px;">
                        <img src="../images/person1.png">
@@ -262,6 +289,7 @@ content: "\2606";
               </div>
            </div>
         </div>
+        <!-- Hide on mobile -->
         <div class=" d-none d-lg-block mx-4" style="max-width: 1920px;margin-left: 70px !important;">
            <div class="row g2" class="reviews_lastrow">
               <div class="col-lg-3">
@@ -341,15 +369,243 @@ content: "\2606";
               </div>
            </div>
         </div>
-        <div class="row" style="margin-top: 120px;" id="reviews_button">
-           <!-- <div class="col">
-              <hr style="background-color: #5680E9;">
-           </div><input type="button" value="View More" class="vm-btn"><div class="col">
-              <hr style="background-color: #5680E9;">
-           </div> -->
-        </div>
+        <!-- <div class="row" style="margin-top: 120px;" id="reviews_button">
+        </div> -->
      </div>
-     <div class="col-md-12 d-flex flex-lg-row justify-content-center mt-5" id="reviews_heading" style="margin-top: 150px;">
+     <!-- for ipad view -->
+     <div class="cont-ourteam d-none d-md-block d-lg-none" id="reviews_main">
+      <div class="mx-4" style="max-width: 1920px;margin-left: 70px !important;">
+         <div class="row">
+            <div class="col-md-6">
+               <div class="card-margin team-box">
+                  <div class="image" style="margin-left: 31px; padding-top: 21px;">
+                     <img src="../images/person1.png">
+                  </div>
+                  <div class="card-title"
+                     style="padding: 21px; margin-left:0px; margin-top: -18px; display: inline-block;">
+                     <div class="rating">
+                        <h6 class="rating_name">Emma P.</h6>
+                        <div class="ratings_stars">
+                           <span class="fa fa-star checked"></span>
+                           <span class="fa fa-star checked"></span>
+                           <span class="fa fa-star checked"></span>
+                           <span class="fa fa-star checked"></span>
+                           <span class="fa fa-star checked"></span>
+                        </div>
+                     </div>
+                  </div>
+
+
+                  <div class="card-text card-descrip">
+                     <p>Couldn’t recommend enough, teaches you everything!!</p>
+                  </div>
+
+               </div>
+            </div>
+
+            <div class="col-md-6">
+               <div class="card-margin team-box">
+                  <div class="image" style="margin-left: 31px; padding-top: 21px;">
+                     <img src="../images/person2.png">
+                  </div>
+                  <div class="card-title"
+                     style="padding: 21px; margin-left:0px; margin-top: -18px; display: inline-block;">
+                     <div class="rating">
+                        <h6 class="rating_name">Laurel G.</h6>
+                        <div class="ratings_stars">
+                           <span class="fa fa-star checked"></span>
+                           <span class="fa fa-star checked"></span>
+                           <span class="fa fa-star checked"></span>
+                           <span class="fa fa-star checked"></span>
+                           <span class="fa fa-star checked"></span>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="card-text card-descrip">
+                     <p>Couldn’t recommend enough, teaches you everything!!</p>
+                  </div>
+
+               </div>
+            </div>
+
+         </div>
+      </div>
+      
+      <div class="mx-4" style="max-width: 1920px;margin-left: 70px !important;">
+
+         <div class="row g2" style="margin-top: 10px;">
+
+            <div class="col-md-6">
+               <div class="card-margin team-box">
+                  <div class="image" style="margin-left: 31px; padding-top: 21px;">
+                     <img src="../images/person3.png">
+                  </div>
+                  <div class="card-title"
+                     style="padding: 21px; margin-left:0px; margin-top: -18px; display: inline-block;">
+                     <div class="rating">
+                        <h6 class="rating_name">Frank H.</h6>
+                        <div class="ratings_stars">
+                           <span class="fa fa-star checked"></span>
+                           <span class="fa fa-star checked"></span>
+                           <span class="fa fa-star checked"></span>
+                           <span class="fa fa-star checked"></span>
+                           <span class="fa fa-star checked"></span>
+                        </div>
+                     </div>
+                  </div>
+
+
+                  <div class="card-text card-descrip">
+                     <p>Couldn’t recommend enough, teaches you everything!!</p>
+                  </div>
+               </div>
+            </div>
+
+            <div class="col-md-6">
+               <div class="card-margin team-box">
+                  <div class="image" style="margin-left: 31px; padding-top: 21px;">
+                     <img src="../images/person4.png">
+                  </div>
+                  <div class="card-title"
+                     style="padding: 21px; margin-left:0px; margin-top: -18px; display: inline-block;">
+                     <div class="rating">
+                        <h6 class="rating_name">Bruce P.</h6>
+                        <div class="ratings_stars">
+                           <span class="fa fa-star checked"></span>
+                           <span class="fa fa-star checked"></span>
+                           <span class="fa fa-star checked"></span>
+                           <span class="fa fa-star checked"></span>
+                           <span class="fa fa-star checked"></span>
+                        </div>
+                     </div>
+                  </div>
+
+
+                  <div class="card-text card-descrip">
+                     <p>Couldn’t recommend enough, teaches you everything!!</p>
+                  </div>
+
+               </div>
+            </div>
+
+         </div>
+      </div>
+      <div class="  mx-4" style="max-width: 1920px;margin-left: 70px !important;">
+         <div class="row g2">
+
+            <div class="col-md-6">
+               <div class="card-margin team-box">
+                  <div class="image" style="margin-left: 31px; padding-top: 21px;">
+                     <img src="../images/person5.png">
+                  </div>
+                  <div class="card-title"
+                     style="padding: 21px; margin-left:0px; margin-top: -18px; display: inline-block;">
+                     <div class="rating">
+                        <h6 class="rating_name">Fionna G.</h6>
+                        <div class="ratings_stars">
+                           <span class="fa fa-star checked"></span>
+                           <span class="fa fa-star checked"></span>
+                           <span class="fa fa-star checked"></span>
+                           <span class="fa fa-star checked"></span>
+                           <span class="fa fa-star checked"></span>
+                        </div>
+                     </div>
+                  </div>
+
+
+                  <div class="card-text card-descrip">
+                     <p>Couldn’t recommend enough, teaches you everything!!</p>
+                  </div>
+
+               </div>
+            </div>
+            <div class="col-md-6">
+               <div class="card-margin team-box">
+                  <div class="image" style="margin-left: 31px; padding-top: 21px;">
+                     <img src="../images/person6.png">
+                  </div>
+                  <div class="card-title"
+                     style="padding: 21px; margin-left:0px; margin-top: -18px; display: inline-block;">
+                     <div class="rating">
+                        <h6 class="rating_name">Emma P.</h6>
+                        <div class="ratings_stars">
+                           <span class="fa fa-star checked"></span>
+                           <span class="fa fa-star checked"></span>
+                           <span class="fa fa-star checked"></span>
+                           <span class="fa fa-star checked"></span>
+                           <span class="fa fa-star checked"></span>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="card-text card-descrip">
+                     <p>Support team replies in an instant and helped with whatever I needed.</p>
+                  </div>
+
+               </div>
+            </div>
+         </div>
+         <div class="row g2">
+
+            <div class="col-md-6">
+               <div class="card-margin team-box">
+                  <div class="image" style="margin-left: 31px; padding-top: 21px;">
+                     <img src="../images/person7.png">
+                  </div>
+                  <div class="card-title"
+                     style="padding: 21px; margin-left:0px; margin-top: -18px; display: inline-block;">
+                     <div class="rating">
+                        <h6 class="rating_name">Frank H.</h6>
+                        <div class="ratings_stars">
+                           <span class="fa fa-star checked"></span>
+                           <span class="fa fa-star checked"></span>
+                           <span class="fa fa-star checked"></span>
+                           <span class="fa fa-star checked"></span>
+                           <span class="fa fa-star checked"></span>
+                        </div>
+                     </div>
+                  </div>
+
+
+                  <div class="card-text card-descrip">
+                     <p>Couldn’t recommend enough, teaches you everything!!</p>
+                  </div>
+
+               </div>
+            </div>
+
+            <div class="col-md-6">
+               <div class="card-margin team-box">
+                  <div class="image" style="margin-left: 31px; padding-top: 21px;">
+                     <img src="../images/person8.png">
+                  </div>
+                  <div class="card-title"
+                     style="padding: 21px; margin-left:0px; margin-top: -18px; display: inline-block;">
+                     <div class="rating">
+                        <h6 class="rating_name">Sandra G.</h6>
+                        <div class="ratings_stars">
+                           <span class="fa fa-star checked"></span>
+                           <span class="fa fa-star checked"></span>
+                           <span class="fa fa-star checked"></span>
+                           <span class="fa fa-star checked"></span>
+                           <span class="fa fa-star checked"></span>
+                        </div>
+                     </div>
+                  </div>
+
+
+                  <div class="card-text card-descrip">
+                     <p>Couldn’t recommend enough, teaches you everything!!</p>
+                  </div>
+
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="row" style="margin-top: 120px;" id="reviews_button">
+      </div>
+   </div>
+     <!-- end -->
+     <div class="col-md-12 d-flex flex-lg-row justify-content-center mt-5" id="reviews_heading" style="margin-left: 35px;">
         <h1 class="ourteam_heading" style="color: black !important;"> Review Guideology </h1>
     <p style="text-align: center; margin-right: 38px;" id="ourteam_text">
       <ul class="select_ratings">
@@ -361,25 +617,21 @@ content: "\2606";
          </ul>
     </p>
     </div>
-    <form action="">
-        <div class=" mt-5 reviews_box">
-            <div class="form-row">
-                <div class="form-group col-6">
-                    <!-- <label for="exampleFormControlTextarea1" class="uname">Message</label> -->
-                    <textarea class="form-control uname-box" id="exampleFormControlTextarea1" rows="5" placeholder="Write your feedback here..."></textarea>
-                  </div>
-            </div>
-              <button type="submit" class="btn btn-primary long-btn-su">Submit</button>
-        </div>
-       </form>
+    <form id="reviewForm" onsubmit="return false">
+      <div class=" mt-5 reviews_box">
+          <div class="form-row">
+              <div class="form-group col-6">
+                <input type="hidden" id='hiddenId' />
+                <input type="text" id='fullName' class="form-control uname-box" placeholder="Full Name" required />
+                  <textarea class="form-control uname-box mt-2  " id="message" rows="5" placeholder="Write your feedback here..." required></textarea>
+                </div>
+          </div>
+            <button type="submit" class="btn btn-primary long-btn-su submit_btn" style="margin-bottom: 30px; margin-left: 90px;">Submit</button>
+            <p style="font-size: 14px; color: #5680E9; text-align: left; margin-top: -13px; margin-left: 115px;" id="reviewsSubmitted"></p>
+      </div>
+     </form>
 <!-- Reviews Cards start -->
 <div class="mx-5" style="max-width: 1920px; padding-right: 75px;">
-    <!-- <div class="row">
-       <div class="col-lg-12">
-          <div class="above-heading" >What's I<u style="content: left;height: 6px;border-radius: 3px;margin-top: 5px;*">ncluded</u>
-          </div>
-       </div>
-    </div> -->
     <br><br>
     <div class="">
        <div class="row g-3">
@@ -639,95 +891,18 @@ content: "\2606";
           <a href="./studentreviews_3.html">3</a>
           <a href="./studentreviews_4.html">4</a>
           <a href="./studentreviews_5.html">5</a>
-          <!-- <a href="#">6</a>
-          <a href="#">7</a>
-          <a href="#">8</a>
-          <a href="#">9</a>
-          <a href="#">10</a>
-          <a href="#">11</a>
-          <a href="#">12</a> -->
+          <a href="./studentreviews_6.html">6</a>
+          <a href="./allreviews.html">View All Reviews</a>
           <a href="./studentreviews_2.html"><strong style="color: #5680E9;" >&#x3E;</strong></a>
        </div>
     </div>
 
  </div>
-	<!-- Footer start -->
-	<div id="footer-fix-id" style="max-width: 1920px; margin-top: 160px">
-        <div class="row g2 footer-og m-3" style="margin: 100px 0px;">
-           <div class="col-lg-2 footer-fst">
-             <a href="../index.html"><img src="../images/footerlogo.png"> </a>
-              <ul>
-                 <li style="margin-top: 30px;">
-                    <button class="btn-android"><img src="../images/android-icon.png" style="width: 37px; height: 33px; float: left; margin-left:15px;"><span  class="android-text">Download</span></button>
-                 </li>
-                 <liv>
-                    <button class="btn-ios" style="margin-top: 15px;"><img src="../images/ios-logo.png" style="width: 37px; height: 33px; float: left; margin-left:15px; margin-top: 20;"><span  class="android-text">Download</span></button>
-                 </liv>
-              </ul>
-           </div>
-           <div class="col-lg-2 footer-fst" id="footer_fst">
-              <ul>
-                 Products
-                <a href="./selectaguide.html"> <li class="footer-gap">Pre-Dental Guide</li></a>
-                <a href="./prepharmacyguide.html"> <li>Pre-Pharmacy Guide</li></a>
-                 <a href="./premedicalguide.html"><li>Pre-Medical Guide</li></a>
-                 <a href="./preundergradguide.html"><li>Pre-Undergrad Guide</li></a>
-                 <a href="./referafreiend.html"><li>Refer A Friend</li></a>
-              </ul>
-              <ul>
-                 Other
-                 <a href="./termsofuse.html"><li class="footer-gap">Terms of Use</li></a>
-                 <a href="./privacypolicy.html"><li>Privacy Policy</li></a>
-              </ul>
-           </div>
-           <div class="col-lg-2 footer-fst">
-              <ul>
-                 About Guideology
-                 <a href="./missionstatement.html"><li class="footer-gap">Our Mission Statement</li></a>
-                 <a href="./studentreviews.html"> <li>Student reviews</li> </a>
-                 <a href="./ourteam.html"><li>Our Team</li></a>
-                 <li><br></li>
-                 <li><br></li>
-              </ul>
-              <ul>
-                 Business Inquiries
-                 <a href="./contactus.html"><li class="footer-gap">Contact us</li></a>
-                 <a href="./collaborate.html"><li>Collaborations</li></a> 
-                 <a href="./affiliateprogram.html"> <li>Affiliate Program</li></a>
-              </ul>
-           </div>
-           <div class="col-lg-2 footer-fst">
-              <ul>
-                 Support
-                 <a href="./contactusforsupport.html"><li class="footer-gap">Contact us</li></a>
-                 <a href="./helpcenter.html"><li>Help Center</li></a>
-                <a href="./forum/index.html"> <li>Forums</li> </a>
-                 <li><br></li>
-                 <li><br></li>
-              </ul>
-              <ul>
-                 Social
-                 <li class="footer-gap">Tiktok</li>
-                 <li>Instagram</li>
-              </ul>
-           </div>
-           <div class="col-lg-3 footer-fst">
-              <ul>
-                 Subscribe for Updates
-                 <li class="footer-gap">
-                    <input type="text" class="newsletter-box" style="padding: 10px;" placeholder="Phone Number">
-                 </li>
-                 <li>
-                    <button type="submit" class="subscribe">Subscribe</button>
-                 </li>
-              </ul>
-           </div>
-        </div>
-        <div class="row m-3">
-           <div class="col-lg-12 copyright-txt">© 2022 Guideology</div>
-        </div>
-     </div>
-     <!-- Footer end-->
+<!-- Footer start -->
+<div id="footer">
+
+</div>
+<!-- Footer end-->
     <!-- Scripts -->
     <script src="../js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
     <script src="../js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
@@ -737,20 +912,8 @@ content: "\2606";
     <script src="../js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
     <script src="../js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
     <script src="../js/scripts.js"></script> <!-- Custom scripts -->
-    <script>
-         const container = document.querySelector('.select_ratings');
-const items = container.querySelectorAll('.select_ratings-item')
-container.onclick = e => {
-const elClass = e.target.classList;
-// change the select_ratings if the user clicks on a different star
-if (!elClass.contains('active')) {
-items.forEach( // reset the active class on the star
-item => item.classList.remove('active')
-);
-console.log(e.target.getAttribute("data-rate"));
-elClass.add('active'); // add active class to the clicked star
-}
-};
-    </script>
+    <script src="../js/reviews.js"></script>
+    <script src="../js/footer.js"></script>
+    <script src="../js/subscribe.js"></script>
 </body>
 </html>

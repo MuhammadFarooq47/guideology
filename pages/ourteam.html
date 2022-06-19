@@ -7,8 +7,8 @@
 
    <!-- SEO Meta Tags -->
    <meta name="description"
-      content="Tivo is a HTML landing page template built with Bootstrap to help you crate engaging presentations for SaaS apps and convert visitors into users.">
-   <meta name="author" content="Inovatik">
+      content="">
+   <meta name="author" content="">
 
    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
    <meta property="og:site_name" content="" /> <!-- website name -->
@@ -25,19 +25,32 @@
    <!-- Styles -->
    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext"
       rel="stylesheet">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"> 
    <link href="../css/bootstrap.css" rel="stylesheet">
    <link href="../css/fontawesome-all.css" rel="stylesheet">
    <link href="../css/swiper.css" rel="stylesheet">
    <link href="../css/magnific-popup.css" rel="stylesheet">
    <link href="../css/styles.css" rel="stylesheet">
-
-
+   <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-database.js"></script>
    <!-- Favicon  -->
    <link rel="icon" href="../images/icon.png">
    <style type="text/css">
       .navbar-nav {
          margin-left: auto;
       }
+      @media only screen and (min-width: 450px) and (max-width: 850px) {
+#team-page{
+   max-width: 15.666667%;
+}
+.team-image{
+
+   margin-left: -21px;
+} 
+
+      }
+   
+	
    </style>
 </head>
 
@@ -86,14 +99,17 @@
 <div class="col-md-12" style="margin-top: 150px;">
     <h1 class="ourteam_heading"> Meet The People That Make Guideology Possible </h1>
 <p style="text-align: center; margin-right: 38px;" id="ourteam_text">
-    The Guideology team works tirelessly to ensure all of our students are provided with up-to-date and accurate material that will guide them through their preferred careers. Our team was carefully hand-picked to ensure that our students will have all the knowledge they need. Guideology is a professional team of designers, developers, writers, students, and teachers.    
+   Meet The People That Make Guideology Possible.
+
+   The Guideology team works tirelessly to ensure all our students are provided with up-to-date material and useful software that will guide them through their preferred careers. Our team was carefully hand-picked to ensure that our students will have all the knowledge they need. Guideology is a professional team of designers, developers, writers, students, and advisors.
+       
 </p>
 </div>
  <div class="container ourteam-bg" style="max-width: 1920px; height: 581px;">
     
     <div class="row px-4 mt-5">
         
-       <div class="col-lg-2 col-md-2 col-sm-6 team-col">
+       <div id="team-page" class="col-lg-2 col-md-2 col-sm-6 team-col">
           <div class="team-image">
              <img src="../images/team1.png" class="team-image">
           </div>
@@ -103,7 +119,7 @@
           <div class="team-descript">Creator / Dental Student
           </div>
        </div>
-       <div class="col-lg-2 col-md-2 col-sm-6 team-col">
+       <div id="team-page" class="col-lg-2 col-md-2 col-sm-6 team-col">
           <div class="team-image">
              <img src="../images/team2.png" class="team-image">
           </div>
@@ -112,16 +128,16 @@
           <div class="team-descript">Software Engineer
           </div>
        </div>
-       <div class="col-lg-2 col-md-2 col-sm-6 team-col">
+       <div id="team-page" class="col-lg-2 col-md-2 col-sm-6 team-col">
           <div class="team-image">
              <img src="../images/team3.png" class="team-image">
           </div>
-          <div class="team-title">David Watson
+          <div class="team-title">Diana Williams
           </div>
           <div class="team-descript">Research & Development
           </div>
        </div>
-       <div class="col-lg-2 col-md-2 col-sm-6 team-col">
+       <div id="team-page" class="col-lg-2 col-md-2 col-sm-6 team-col">
           <div class="team-image">
              <img src="../images/team4.png" class="team-image">
           </div>
@@ -130,7 +146,7 @@
           <div class="team-descript">Editor & Writer
           </div>
        </div>
-       <div class="col-lg-2 col-md-2 col-sm-6 team-col">
+       <div id="team-page" class="col-lg-2 col-md-2 col-sm-6 team-col">
           <div class="team-image">
              <img src="../images/team5.png" class="team-image">
           </div>
@@ -154,83 +170,12 @@
 
 
    <!--rest-->
-	<!-- Footer start -->
-	<div id="footer-fix-id" style="max-width: 1920px; margin-top: 160px" class="ourteam_footer">
-      <div class="row g2 footer-og m-3" style="margin: 100px 0px;">
-         <div class="col-lg-2 footer-fst">
-           <a href="../index.html"><img src="../images/footerlogo.png"> </a>
-            <ul>
-               <li style="margin-top: 30px;">
-                  <button class="btn-android"><img src="../images/android-icon.png" style="width: 37px; height: 33px; float: left; margin-left:15px;"><span  class="android-text">Download</span></button>
-               </li>
-               <liv>
-                  <button class="btn-ios" style="margin-top: 15px;"><img src="../images/ios-logo.png" style="width: 37px; height: 33px; float: left; margin-left:15px; margin-top: 20;"><span  class="android-text">Download</span></button>
-               </liv>
-            </ul>
-         </div>
-         <div class="col-lg-2 footer-fst" id="footer_fst">
-            <ul>
-               Products
-              <a href="./selectaguide.html"> <li class="footer-gap">Pre-Dental Guide</li></a>
-              <a href="./prepharmacyguide.html"> <li>Pre-Pharmacy Guide</li></a>
-               <a href="./premedicalguide.html"><li>Pre-Medical Guide</li></a>
-               <a href="./preundergradguide.html"><li>Pre-Undergrad Guide</li></a>
-               <a href="./referafreiend.html"><li>Refer A Friend</li></a>
-            </ul>
-            <ul>
-               Other
-               <a href="./termsofuse.html"><li class="footer-gap">Terms of Use</li></a>
-               <a href="./privacypolicy.html"><li>Privacy Policy</li></a>
-            </ul>
-         </div>
-         <div class="col-lg-2 footer-fst">
-            <ul>
-               About Guideology
-               <a href="./missionstatement.html"><li class="footer-gap">Our Mission Statement</li></a>
-               <a href="./studentreviews.html"> <li>Student reviews</li> </a>
-               <a href="./ourteam.html"><li>Our Team</li></a>
-               <li><br></li>
-               <li><br></li>
-            </ul>
-            <ul>
-               Business Inquiries
-               <a href="./contactus.html"><li class="footer-gap">Contact us</li></a>
-               <a href="./collaborate.html"><li>Collaborations</li></a> 
-               <a href="./affiliateprogram.html"> <li>Affiliate Program</li></a>
-            </ul>
-         </div>
-         <div class="col-lg-2 footer-fst">
-            <ul>
-               Support
-               <a href="./contactusforsupport.html"><li class="footer-gap">Contact us</li></a>
-               <a href="./helpcenter.html"><li>Help Center</li></a>
-              <a href="./forum/index.html"> <li>Forums</li> </a>
-               <li><br></li>
-               <li><br></li>
-            </ul>
-            <ul>
-               Social
-               <li class="footer-gap">Tiktok</li>
-               <li>Instagram</li>
-            </ul>
-         </div>
-         <div class="col-lg-3 footer-fst">
-            <ul>
-               Subscribe for Updates
-               <li class="footer-gap">
-                  <input type="text" class="newsletter-box" style="padding: 10px;" placeholder="Phone Number">
-               </li>
-               <li>
-                  <button type="submit" class="subscribe">Subscribe</button>
-               </li>
-            </ul>
-         </div>
-      </div>
-      <div class="row m-3">
-         <div class="col-lg-12 copyright-txt">© 2022 Guideology</div>
-      </div>
-   </div>
-   <!-- Footer end-->
+
+ <!-- Footer start -->
+ <div id="footer">
+
+</div>
+<!-- Footer end-->
    <!-- Scripts -->
    <script src="../js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
    <script src="../js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
@@ -240,6 +185,8 @@
    <script src="../js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
    <script src="../js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
    <script src="../js/scripts.js"></script> <!-- Custom scripts -->
+   <script src="../js/footer.js"></script>
+   <script src="../js/subscribe.js"></script>
 </body>
 
 </html>

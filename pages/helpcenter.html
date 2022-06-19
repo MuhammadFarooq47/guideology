@@ -7,8 +7,8 @@
 
    <!-- SEO Meta Tags -->
    <meta name="description"
-      content="Tivo is a HTML landing page template built with Bootstrap to help you crate engaging presentations for SaaS apps and convert visitors into users.">
-   <meta name="author" content="Inovatik">
+      content="">
+   <meta name="author" content="">
 
    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
    <meta property="og:site_name" content="" /> <!-- website name -->
@@ -25,6 +25,7 @@
    <!-- Styles -->
    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext"
       rel="stylesheet">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"> 
    <link href="../css/bootstrap.css" rel="stylesheet">
    <link href="../css/fontawesome-all.css" rel="stylesheet">
    <link href="../css/swiper.css" rel="stylesheet">
@@ -39,20 +40,20 @@
       .navbar-nav {
          margin-left: auto;
       }
-
+  
       .text-secondary {
          color: #3d5d6f;
       }
-
+  
       .h4,
       h4 {
          font-size: 1.2rem;
       }
-
+  
       h2 {
          color: #333;
       }
-
+  
       .fa,
       .fas {
          font-family: 'FontAwesome';
@@ -60,50 +61,40 @@
          font-size: 1.2rem;
          font-style: normal;
       }
-
+  
       .right-0 {
          right: 0;
       }
-
+  
       .top-0 {
          top: 0;
       }
-
+  
       .h-100 {
          height: 100%;
       }
-
+  
       a.text-secondary:focus,
       a.text-secondary:hover {
          text-decoration: none;
          color: #22343e;
       }
-
+  
       #accordion .fa-plus {
          transition: -webkit-transform 0.25s ease-in-out;
          transition: transform 0.25s ease-in-out;
          transition: transform 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;
       }
-
+  
       #accordion a[aria-expanded=true] .fa-plus {
          -webkit-transform: rotate(45deg);
          transform: rotate(45deg);
-      }
+      }   
+      .active1, .help-a:hover{
+  /* background-color: none !important; */
+  color: #5680E9 !important;}
    </style>
    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-   <script type="text/javascript">
-      let one = document.querySelector('#one');
-      let two = document.querySelector('#two');
-      let container_right = document.querySelector('#container_right');
-      let paragraph = document.querySelector('paragraph');
-
-      two.addEventListener('click', () => {
-         container_right.innerHTML = '<section  class="container my-5" id="maincontent"> <section id="accordion">  <a class="py-3 d-block h-100 w-100 position-relative z-index-1 pr-1 text-secondary border-top" aria-controls="faq-17" aria-expanded="false" data-toggle="collapse" href="#faq-17" role="button">  <div class="position-relative">  <h2 class="h4 m-0 pr-3">   What is Guideology? </h2> <div class="position-absolute top-0 right-0 h-100 d-flex align-items-center">  <i class="fa fa-plus"></i>  </div>  </div>  </a> </section></section>';
-
-
-
-      });
-   </script>
 </head>
 
 <body data-spy="scroll" data-target=".fixed-top">
@@ -149,195 +140,126 @@
    <br>
 
 
-   <div class="container" style="padding-top: 80px;">
-      <h2>Have a Question? <br> Look Here </h2>
-      <br>
-      <br>
-      <input id="help_inp" type="text" placeholder="search"
-         style="border-radius: 30px;width: 300px;height: 34px; border: 1px solid #5680E9; padding: 10px; outline: none;">
+ <!-- Questions Start -->
+ <div class="container" style="padding-top: 80px; margin-left: 20px;">
+   <h2>Have a Question? <br> Look Here </h2>
+   <br>
+   <br>
+   <input id="help_inp" type="text" placeholder="search"
+      style="border-radius: 30px;width: 300px;height: 34px; border: 1px solid #5680E9; padding: 10px; outline: none;">
 
 
 
 
-      <button id="help_btn"
-         style="background-color: #5680E9; color: #ffff; border-width: 0px;border-radius: 50px; padding: 4px 8px;margin-left: -36px;"><i
-            class="fa fa-search"></i></button>
+   <button id="help_btn"
+      style="background-color: #5680E9; color: #ffff; border-width: 0px;border-radius: 50px; padding: 6px 8px;margin-left: -36px;"><i
+         class="fa fa-search"></i></button>
 
-      <br>
-      <br>
-      <div class="container">
-         <div class="row">
-            <div class="col-lg-3">
-               <div class="container-left">
-                  <ul class="list-group">
-                     <li class="list-group-item border-0"><a href="#" onclick="container1()">About Guideology</a></li>
-                     <li class="list-group-item border-0"><a href="#" onclick="container2()">Choose a plan</a></li>
-                     <li class="list-group-item border-0"><a href="#" onclick="container3()">Discount code</a></li>
-                     <li class="list-group-item border-0"><a href="#" onclick="container4()">our support system</a></li>
+   <br>
+   <br>
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-3">
+            <div class="container-left">
+               <ul id="help-ul" class="list-group">
+                  <li style="background: none !important;" class="list-group-item border-0"><a class="help-a" style="color: #707070;" href="#" onclick="container1()">About Guideology</a></li>
+                  <li style="background: none !important;" class="list-group-item border-0"><a class="help-a" style="color: #707070;" href="#" onclick="container2()">Choose a plan</a></li>
+                  <li style="background: none !important;" class="list-group-item border-0"><a class="help-a" style="color: #707070;" href="#" onclick="container3()">Discount code</a></li>
+                  <li style="background: none !important;" class="list-group-item border-0"><a class="help-a" style="color: #707070;" href="#" onclick="container4()">our support system</a></li>
 
-                  </ul>
-               </div>
+               </ul>
             </div>
-            <div class="col-lg-9">
-               <div id="container_right" class="container-right">
-                  <section id="paragraph" class="container my-5" id="maincontent">
-                     <section id="accordion">
-                        <a class="py-3 d-block h-100 w-100 position-relative z-index-1 pr-1 text-secondary "
-                           aria-controls="faq-17" aria-expanded="false" data-toggle="collapse" href="#faq-17"
-                           role="button">
-                           <div class="position-relative">
-                              <h2 class="h4 m-0 pr-3">What is Guideology?</h2>
-                              <div class="position-absolute top-0 right-0 h-100 d-flex align-items-center">
-                                 <i class="fa fa-plus"></i>
-                              </div>
-                           </div>
-                        </a>
-                        <div class="collapse" id="faq-17">
-                           <div class="card-body border-0 p-0">
-                              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est</p>
-                              <br />
-                              <br />
-                              <p> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam.</p>
+         </div>
+         <div class="col-lg-9">
+            <div id="container_right" class="container-right">
+               <section id="paragraph" class="container my-5" id="maincontent">
+                  <section id="accordion">
+                     <a class="py-3 d-block h-100 w-100 position-relative z-index-1 pr-1 text-secondary "
+                        aria-controls="faq-17" aria-expanded="false" data-toggle="collapse" href="#faq-17"
+                        role="button">
+                        <div class="position-relative">
+                           <h2 class="h4 m-0 pr-3">What is Guideology?</h2>
+                           <div class="position-absolute top-0 right-0 h-100 d-flex align-items-center">
+                              <i class="fa fa-plus"></i>
                            </div>
                         </div>
-                        <a class="py-3 d-block h-100 w-100 position-relative z-index-1 pr-1 text-secondary border-top"
-                           aria-controls="faq-18" aria-expanded="false" data-toggle="collapse" href="#faq-18"
-                           role="button">
-                           <div class="position-relative">
-                              <h2 class="h4 m-0 pr-3">What does Guideology offer?</h2>
-                              <div class="position-absolute top-0 right-0 h-100 d-flex align-items-center">
-                                 <i class="fa fa-plus"></i>
-                              </div>
-                           </div>
-                        </a>
-                        <div class="collapse" id="faq-18" >
-                           <div class="card-body border-0 p-0">
-                              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est</p>
-                              <br />
-                              <br />
-                              <p> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam.</p>
+                     </a>
+                     <div class="collapse" id="faq-17">
+                        <div class="card-body border-0 p-0">
+                           <p>Guideology is the first program that incorporates an inclusive guide, live support, student forums, exclusive services, and the ability to save your progress all under one platform. To learn more about each section, visit their specific tab in our help center or visit the introduction page under your account.</p>
+                           <!-- <br />
+                           <br /> -->
+                           <!-- <p>Guideology is the first program that incorporates an inclusive guide, live support, student forums, exclusive services, and the ability to save your progress all under one platform. To learn more about each section, visit their specific tab in our help center or visit the introduction page under your account. </p> -->
+                        </div>
+                     </div>
+                     <a class="py-3 d-block h-100 w-100 position-relative z-index-1 pr-1 text-secondary border-top"
+                        aria-controls="faq-18" aria-expanded="false" data-toggle="collapse" href="#faq-18"
+                        role="button">
+                        <div class="position-relative">
+                           <h2 class="h4 m-0 pr-3">What does Guideology offer?</h2>
+                           <div class="position-absolute top-0 right-0 h-100 d-flex align-items-center">
+                              <i class="fa fa-plus"></i>
                            </div>
                         </div>
-                        <a class="py-3 d-block h-100 w-100 position-relative z-index-1 pr-1 text-secondary border-top"
-                           aria-controls="faq-19" aria-expanded="false" data-toggle="collapse" href="#faq-19"
-                           role="button">
-                           <div class="position-relative">
-                              <h2 class="h4 m-0 pr-3">Why was Guideology created?</h2>
-                              <div class="position-absolute top-0 right-0 h-100 d-flex align-items-center">
-                                 <i class="fa fa-plus"></i>
-                              </div>
-                           </div>
-                        </a>
-                        <div class="collapse" id="faq-19">
-                           <div class="card-body border-0 p-0">
-                              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est</p>
-                              <br />
-                              <br />
-                              <p> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam.</p>
+                     </a>
+                     <div class="collapse" id="faq-18" >
+                        <div class="card-body border-0 p-0">
+                           <p>As of March of 2022, we have completed our 5 section programs for the following fields:
+                             Dental, Optometry, & Pharmacy.
+                             We are currently working on completing our Medical and PA programs, to stay updated click one of the following links.<strong>  Medical - PA</strong>
+                             </p>
+                           <!-- <br />
+                           <br />
+                           <p>As of March of 2022, we have completed our 5 section programs for the following fields:
+                             Dental, Optometry, & Pharmacy.
+                             We are currently working on completing our Medical and PA programs, to stay updated click one of the following links. <strong> Medical - PA</strong>
+                              </p> -->
+                        </div>
+                     </div>
+                     <a class="py-3 d-block h-100 w-100 position-relative z-index-1 pr-1 text-secondary border-top"
+                        aria-controls="faq-19" aria-expanded="false" data-toggle="collapse" href="#faq-19"
+                        role="button">
+                        <div class="position-relative">
+                           <h2 class="h4 m-0 pr-3">Why was Guideology created?</h2>
+                           <div class="position-absolute top-0 right-0 h-100 d-flex align-items-center">
+                              <i class="fa fa-plus"></i>
                            </div>
                         </div>
-                     </section>
+                     </a>
+                     <div class="collapse" id="faq-19">
+                        <div class="card-body border-0 p-0">
+                           <p>Guideology was created by graduate students & advisors to help make the process of getting into your dream school as simple as possible. Our goal is to provide everything students need under one easy to manage platform. To learn more, visit our <strong>Mission Statement </strong> page.</p>
+                           <!-- <br />
+                           <br />
+                           <p>Guideology was created by graduate students & advisors to help make the process of getting into your dream school as simple as possible. Our goal is to provide everything students need under one easy to manage platform. To learn more, visit our <strong>Mission Statement </strong> page. </p> -->
+                        </div>
+                     </div>
                   </section>
+               </section>
 
-               </div>
-               <div id="container_right" class="container-right">
-
-               </div>
+            </div>
+            <div id="container_right" class="container-right">
 
             </div>
 
          </div>
+
       </div>
-
-
-
-
    </div>
-
-
+</div>
+ <!-- Questions End -->
 
 
 
 
    <!--rest-->
 
- 	<!-- Footer start -->
-    <div id="footer-fix-id" style="max-width: 1920px; margin-top: 160px">
-      <div class="row g2 footer-og m-3" style="margin: 100px 0px;">
-         <div class="col-lg-2 footer-fst">
-           <a href="../index.html"><img src="../images/footerlogo.png"> </a>
-            <ul>
-               <li style="margin-top: 30px;">
-                  <button class="btn-android"><img src="../images/android-icon.png" style="width: 37px; height: 33px; float: left; margin-left:15px;"><span  class="android-text">Download</span></button>
-               </li>
-               <liv>
-                  <button class="btn-ios" style="margin-top: 15px;"><img src="../images/ios-logo.png" style="width: 37px; height: 33px; float: left; margin-left:15px; margin-top: 20;"><span  class="android-text">Download</span></button>
-               </liv>
-            </ul>
-         </div>
-         <div class="col-lg-2 footer-fst" id="footer_fst">
-            <ul>
-               Products
-              <a href="./selectaguide.html"> <li class="footer-gap">Pre-Dental Guide</li></a>
-              <a href="./prepharmacyguide.html"> <li>Pre-Pharmacy Guide</li></a>
-               <a href="./premedicalguide.html"><li>Pre-Medical Guide</li></a>
-               <a href="./preundergradguide.html"><li>Pre-Undergrad Guide</li></a>
-               <a href="./referafreiend.html"><li>Refer A Friend</li></a>
-            </ul>
-            <ul>
-               Other
-               <a href="./termsofuse.html"><li class="footer-gap">Terms of Use</li></a>
-               <a href="./privacypolicy.html"><li>Privacy Policy</li></a>
-            </ul>
-         </div>
-         <div class="col-lg-2 footer-fst">
-            <ul>
-               About Guideology
-               <a href="./missionstatement.html"><li class="footer-gap">Our Mission Statement</li></a>
-               <a href="./studentreviews.html"> <li>Student reviews</li> </a>
-               <a href="./ourteam.html"><li>Our Team</li></a>
-               <li><br></li>
-               <li><br></li>
-            </ul>
-            <ul>
-               Business Inquiries
-               <a href="./contactus.html"><li class="footer-gap">Contact us</li></a>
-               <a href="./collaborate.html"><li>Collaborations</li></a> 
-               <a href="./affiliateprogram.html"> <li>Affiliate Program</li></a>
-            </ul>
-         </div>
-         <div class="col-lg-2 footer-fst">
-            <ul>
-               Support
-               <a href="./contactusforsupport.html"><li class="footer-gap">Contact us</li></a>
-               <a href="./helpcenter.html"><li>Help Center</li></a>
-              <a href="./forum/index.html"> <li>Forums</li> </a>
-               <li><br></li>
-               <li><br></li>
-            </ul>
-            <ul>
-               Social
-               <li class="footer-gap">Tiktok</li>
-               <li>Instagram</li>
-            </ul>
-         </div>
-         <div class="col-lg-3 footer-fst">
-            <ul>
-               Subscribe for Updates
-               <li class="footer-gap">
-                  <input type="text" class="newsletter-box" style="padding: 10px;" placeholder="Phone Number">
-               </li>
-               <li>
-                  <button type="submit" class="subscribe">Subscribe</button>
-               </li>
-            </ul>
-         </div>
-      </div>
-      <div class="row m-3">
-         <div class="col-lg-12 copyright-txt">© 2022 Guideology</div>
-      </div>
-   </div>
-   <!-- Footer end-->
+ 
+ <!-- Footer start -->
+ <div id="footer">
+
+</div>
+<!-- Footer end-->
 
    <!-- Scripts -->
    <script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
@@ -348,11 +270,25 @@
    <script src="../js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
    <script src="../js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
    <script src="../js/scripts.js"></script> <!-- Custom scripts -->
+   <script src="../js/footer.js"></script>
 </body>
 <script>
+   var a = document.getElementById("help-ul");
+var b = a.getElementsByClassName("help-a");
+for (var i = 0; i < b.length; i++) {
+  b[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active1");
+  if (current.length > 0) { 
+    current[0].className = current[0].className.replace(" active1", "");
+  }
+  this.className += " active1";
+  });
+}
+
+
    const container_right1 = document.getElementById('container_right');
    function container1() {
-      const a = container_right1.innerHTML = '<section id="accordion"><a class="py-3 d-block h-100 w-100 position-relative z-index-1 pr-1 text-secondary " aria-controls="faq-17" aria-expanded="false" data-toggle="collapse" href="#faq-17" role="button"><div class="position-relative"><h2 class="h4 m-0 pr-3">What is Guideology?</h2><div class="position-absolute top-0 right-0 h-100 d-flex align-items-center"><i class="fa fa-plus"></i></div></div></a><div class="collapse" id="faq-17" style=""><div class="card-body border-0 p-0"><p>Custom gear can be ordered through our contact form.Additional fees may apply.</p></div></div><a class="py-3 d-block h-100 w-100 position-relative z-index-1 pr-1 text-secondary border-top border-" aria-controls="faq-18" aria-expanded="false" data-toggle="collapse" href="#faq-18" role="button"><div class="position-relative"><h2 class="h4 m-0 pr-3">What does Guideology offer?</h2><div class="position-absolute top-0 right-0 h-100 d-flex align-items-center"><i class="fa fa-plus"></i></div></div></a><div class="collapse" id="faq-18" style=""><div class="card-body border-0 p-0"><p>Our official mission statement is lorem ipsum dolor sit.</p><p></p></div></div><a class="py-3 d-block h-100 w-100 position-relative z-index-1 pr-1 text-secondary border-top border-bottom" aria-controls="faq-19" aria-expanded="false" data-toggle="collapse" href="#faq-19" role="button"><div class="position-relative"><h2 class="h4 m-0 pr-3">Why was Guideology created?</h2><div class="position-absolute top-0 right-0 h-100 d-flex align-items-center"><i class="fa fa-plus"></i></div></div></a><div class="collapse" id="faq-19" style=""><div class="card-body border-0 p-0"><p>The purpose of LunarXP is to give you the best Mars experience!</p><p></p></div></div><div class="collapse" id="faq-20"><div class="card-body border-0 p-0"><p>The best email for any inquiries is email@email.com!</p><p></p></div></div><div class="collapse" id="faq-21"><div class="card-body border-0 p-0"><p>Lorem ipsum dolor sit!</p><p></p></div></div><div class="collapse" id="faq-22"><div class="card-body border-0 p-0"><p>The best time to call is 24/7!We are always available to answer any questions.</p><p></p></div></div></section></section>'
+      const a = container_right1.innerHTML = '<section id="accordion"><a class="py-3 d-block h-100 w-100 position-relative z-index-1 pr-1 text-secondary " aria-controls="faq-17" aria-expanded="false" data-toggle="collapse" href="#faq-17" role="button"><div class="position-relative"><h2 class="h4 m-0 pr-3">What is Guideology?</h2><div class="position-absolute top-0 right-0 h-100 d-flex align-items-center"><i class="fa fa-plus"></i></div></div></a><div class="collapse" id="faq-17" style=""><div class="card-body border-0 p-0"><p>Guideology is the first program that incorporates an inclusive guide, live support, student forums, exclusive services, and the ability to save your progress all under one platform. To learn more about each section, visit their specific tab in our help center or visit the introduction page under your account.</p></div></div><a class="py-3 d-block h-100 w-100 position-relative z-index-1 pr-1 text-secondary border-top border-" aria-controls="faq-18" aria-expanded="false" data-toggle="collapse" href="#faq-18" role="button"><div class="position-relative"><h2 class="h4 m-0 pr-3">What does Guideology offer?</h2><div class="position-absolute top-0 right-0 h-100 d-flex align-items-center"><i class="fa fa-plus"></i></div></div></a><div class="collapse" id="faq-18" style=""><div class="card-body border-0 p-0"><p<p>As of March of 2022, we have completed our 5 section programs for the following fields: Dental, Optometry, & Pharmacy. We are currently working on completing our Medical and PA programs, to stay updated click one of the following links.<strong> Medical - PA</strong> </p><p></p></div></div><a class="py-3 d-block h-100 w-100 position-relative z-index-1 pr-1 text-secondary border-top border-bottom" aria-controls="faq-19" aria-expanded="false" data-toggle="collapse" href="#faq-19" role="button"><div class="position-relative"><h2 class="h4 m-0 pr-3">Why was Guideology created?</h2><div class="position-absolute top-0 right-0 h-100 d-flex align-items-center"><i class="fa fa-plus"></i></div></div></a><div class="collapse" id="faq-19" style=""><div class="card-body border-0 p-0"><p>Guideology was created by graduate students & advisors to help make the process of getting into your dream school as simple as possible. Our goal is to provide everything students need under one easy to manage platform. To learn more, visit our <strong>Mission Statement</strong> page.</p><p></p></div></div><div class="collapse" id="faq-20"><div class="card-body border-0 p-0"><p>The best email for any inquiries is email@email.com!</p><p></p></div></div><div class="collapse" id="faq-21"><div class="card-body border-0 p-0"><p>Lorem ipsum dolor sit!</p><p></p></div></div><div class="collapse" id="faq-22"><div class="card-body border-0 p-0"><p>The best time to call is 24/7!We are always available to answer any questions.</p><p></p></div></div></section></section>'
 
 
    }
@@ -367,8 +303,9 @@
    }
    const container_right4 = document.getElementById('container_right');
    function container4() {
-      const d = container_right3.innerHTML = '<section id="paragraph" class="container my-5" id="maincontent"><section id="accordion"><a class="py-3 d-block h-100 w-100 position-relative z-index-1 pr-1 text-secondary " aria-controls="faq-17" aria-expanded="false" data-toggle="collapse" href="#faq-17" role="button"><div class="position-relative"><h2 class="h4 m-0 pr-3">Asking Questions </h2><div class="position-absolute top-0 right-0 h-100 d-flex align-items-center"><i class="fa fa-plus"></i></div></div></a><div class="collapse" id="faq-17" style=""><div class="card-body border-0 p-0"><p>Custom gear can be ordered through our contact form. Additional fees may apply.</p></div></div><a class="py-3 d-block h-100 w-100 position-relative z-index-1 pr-1 text-secondary border-top border-bottom" aria-controls="faq-18" aria-expanded="false" data-toggle="collapse" href="#faq-18" role="button"><div class="position-relative"><h2 class="h4 m-0 pr-3">Student Forums </h2><div class="position-absolute top-0 right-0 h-100 d-flex align-items-center"><i class="fa fa-plus"></i></div></div></a><div class="collapse" id="faq-18" style=""><div class="card-body border-0 p-0"><p>Our official mission statement is lorem ipsum dolor sit.</p><p></p></div></div></section></section>'
+      const d = container_right3.innerHTML = ' <section id="paragraph" class="container my-5" id="maincontent"> <section id="accordion"> <a class="py-3 d-block h-100 w-100 position-relative z-index-1 pr-1 text-secondary" aria-controls="faq-17" aria-expanded="false" data-toggle="collapse" href="#faq-17" role="button"> <div class="position-relative"> <h2 class="h4 m-0 pr-3">Asking Questions</h2> <div class="position-absolute top-0 right-0 h-100 d-flex align-items-center"><i class="fa fa-plus"></i></div></div></a> <div class="collapse" id="faq-17" style=""> <div class="card-body border-0 p-0"><p>Custom gear can be ordered through our contact form. Additional fees may apply.</p></div></div><a class="py-3 d-block h-100 w-100 position-relative z-index-1 pr-1 text-secondary border-top border-bottom" aria-controls="faq-18" aria-expanded="false" data-toggle="collapse" href="#faq-18" role="button"> <div class="position-relative"> <h2 class="h4 m-0 pr-3">Student Forums</h2> <div class="position-absolute top-0 right-0 h-100 d-flex align-items-center"><i class="fa fa-plus"></i></div></div></a> <div class="collapse" id="faq-18" style=""> <div class="card-body border-0 p-0"> <p>Here, youll be able to interact with our private student community and view hundreds of student questions and discussions.</p><br><br><p>We suggest reading the experiences in the forums and learning from others discussions as well as being active to encourage making this process a group effort.</p></div></div></section>'
    }
 </script>
+<script src="../js/subscribe.js"></script>
 
 </html>

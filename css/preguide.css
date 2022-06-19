@@ -47,14 +47,14 @@ body{
     }
 }
 
-@media (max-width: 800px) and (min-width: 400px){
+@media (max-width: 900px) and (min-width: 400px){
     .text-1{
-    text-align: center;
-    width: 600px;
-    display: block;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
+    text-align: center !important;
+    width: 600px !important;
+    display: block !important;
+    margin-top: 20px !important;
+    margin-left: auto !important;
+    margin-right: 110px !important;
     }
 }
 
@@ -106,29 +106,46 @@ body{
 
 }
 
-@media (max-width: 800px) and (min-width: 400px){
+@media only screen and (min-width: 450px) and (max-width: 850px) {
     .input-1>input{
      display: block;
-        margin-top: 30px;
-        margin-left: 50px;
-        margin-right: 50px;
-        border: none;
-        outline: none;
-        top: 820px;
-        left: 650px;
-        width: 600px;
-        height: 60px;
-        background: #5680E9 0% 0% no-repeat padding-box;
-        border-radius: 30px;
-        opacity: 1;
+        margin-top: 30px !important;
+        margin-left: 115px  !important;
+        margin-right: 50px !important;
+        border: none !important;
+        outline: none !important;
+        top: 820px !important;
+        left: 650px !important;
+        width: 600px !important;
+        height: 60px !important;
+        background: #5680E9 0% 0% no-repeat padding-box !important;
+        border-radius: 30px !important;
+        opacity: 1 !important;
     }
+    @media only screen and (max-width: 768px){
+         .input-1>input {
+    display: block;
+    margin-top: 30px !important;
+    margin-left: 20px  !important;
+    margin-right: 50px !important;
+    border: none !important;
+    outline: none !important;
+    top: 820px !important;
+    left: 650px !important;
+    width: 600px !important;
+    height: 60px !important;
+    background: #5680E9 0% 0% no-repeat padding-box !important;
+    border-radius: 30px !important;
+    opacity: 1 !important;}
+}
+}
     .share_icon {
         margin-left: -105px !important;
         margin-right: 50px;
     }
-}
 
-@media (max-width: 1200px) and (min-width: 800px){
+
+@media (max-width: 1200px) {
     .input-1>input{
         display: block;
            margin-top: 30px;

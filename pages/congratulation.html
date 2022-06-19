@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Our goal at Guideology is to provide an inclusive and accurate guide that will cover every step of the path you will take towards your preferred career.">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Guideology - For Future Dental Students</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <!-- Favicon icon -->
+   <link rel="icon" type="image/png" sizes="16x16" href="../images/icon.png">
+    <!-- Custom CSS -->
+</head>
+<style>
+    /* Import poppins - Goole Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+.container {
+  width: 100%;
+  height: 100vh;
+  /* background: #f1f1f1; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.open {
+  padding: 20px 80px;
+  font-size: 24px;
+  color: #fff;
+  border-radius: 100px;
+  border: none;
+  outline: none;
+  background: #2466ff;
+  cursor: pointer;
+  font-weight: 500;
+}
+.open.hidden {
+  display: none;
+  pointer-events: none;
+}
+.box {
+  padding: 30px 40px;
+  background: #fff;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  overflow: hidden;
+  width: 650px;
+
+  border-radius: 10px;
+
+  display: none;
+  pointer-events: none;
+}
+.box.visible {
+  display: block;
+  pointer-events: all;
+}
+.box .imgBox {
+  text-align: center;
+}
+.box img {
+  width: 180px;
+}
+.title {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 32px;
+  color: #222;
+}
+.box p {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: 500;
+  color: #777;
+}
+.btnContainer {
+  display: flex;
+  justify-content: center;
+}
+.gotodasboard {
+  margin-top: 30px;
+  width: 240px;
+  height: 54px;
+  cursor: pointer;
+  font-size: 17px;
+  color: #fff;
+  border: none;
+  outline: none;
+  background: #5680E9;
+  border-radius: 5px;
+}
+
+</style>
+
+<body>
+    <div class="container">
+        <button class="open">Claim Your Reward</button>
+        <!-- modal -->
+        <div class="box">
+          <div class="imgBox">
+            <img src="../images/logo.png" alt="" />
+          </div>
+          <h2 class="title">Congratulations! 🌟</h2>
+          <p>
+            Your account has been successfully Logged in.
+          </p>
+          <div class="btnContainer">
+              <a href="../dashboard/index.html">
+                <button class="gotodasboard">Go to Dashboard</button>
+              </a>
+          
+          </div>
+        </div>
+      </div>
+      <script src="../js/confetti.min.js"></script>
+      <script>
+        const openbtn = document.querySelector(".open");
+        const modal = document.querySelector('.box');
+        const closeBtn = document.querySelector('.close');
+        // we are saying that when we click This
+        
+          modal.classList.add('visible')
+          openbtn.classList.add('hidden');
+          const startit = () => {
+            setTimeout(function () {
+              confetti.start();
+            }, 1000);
+          };
+          // Stops
+          const stopit = () => {
+            setTimeout(function () {
+              confetti.stop();
+            }, 5000);
+          };
+          // playing start
+          startit();
+          // stoping it
+          stopit();
+
+        closeBtn.addEventListener('click', () => {
+          modal.classList.remove('visible')
+          openbtn.classList.remove('hidden');
+        })
+      </script>
+      
+</body>
+
+</html>

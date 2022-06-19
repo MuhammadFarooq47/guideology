@@ -24,6 +24,41 @@ font-family: monts;
 margin: 0px;}
 .checked {
 color: #5680E9;
+
+}
+html,
+body {
+            /* width: 100%; */
+            height: 100%;
+            margin: 0;
+            overflow-x: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+}
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #e8e8e8;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #fb5496;
+}
+
+::-webkit-scrollbar-thumb {
+    background-image: -webkit-linear-gradient(45deg, #ffbd84, #ff1f8e);
+    background-image: -o-linear-gradient(45deg, #ffbd84, #ff1f8e);
+    background-image: linear-gradient(45deg, #ffbd84, #ff1f8e);
+}
+
+#scrolling-wrapper {
+    width: auto;
+    height: 250px;
+    overflow-y: scroll;
+    scrollbar-width: thin;
 }
 .card-margin {
 margin-bottom: 1.875rem;
@@ -188,6 +223,7 @@ width: 4rem;
 height: 4rem;
 border-radius: 50%;
 }
+
 .widget-49 .widget-49-title-wrapper .widget-49-date-danger .widget-49-date-day {
 color: #F95062;
 font-weight: 500;
@@ -306,7 +342,7 @@ flex-direction: row;
 }
 .ratings_stars{
 	margin-left: 30px;
-	margin-top: -5px;
+	margin-top: -5px !important;
 }
 .student_reviewa{
     margin-left: -153px;
@@ -317,12 +353,13 @@ flex-direction: row;
 	font-weight: bold;
 }
 .reviews_box{
-	margin-left: 380px;
+	margin-left: 500px;
 }
 .footer-og .footer-fst img
 {
-height: 46px;
-width: 200px;
+    height: auto;
+    width: 300px;
+    margin-left: -45px;
 }
 .class-sec .col-lg-12 img
 {
@@ -342,7 +379,7 @@ float: left;
 .sign{
 	width: 150px !important;
 	height: 80px !important;
-	margin-left: 600px;
+	margin-left: 680px;
 }
 .creator_data{
 	display: flex; 
@@ -469,6 +506,7 @@ h4 {
 color: #333;
 font: 700 1.375rem/1.75rem "Open Sans", sans-serif;
 letter-spacing: -0.1px;
+font-family: 'Montserrat';
 }
 h5 {
 color: #333;
@@ -755,7 +793,7 @@ color: #313131;
 .chat img{
     position: fixed;
     bottom: 0px;
-    right: 0px;
+    right: 3px;
 	width: 300px;
 	
 }
@@ -766,6 +804,7 @@ font-size: 14px;
 letter-spacing: 0px;
 color: #313131;
 margin-top: 10px;
+margin-left: 160px;
 }
 .long-btn
 {
@@ -783,8 +822,8 @@ opacity: 1;
 }
 .long-btn-su
 {
-	width: 403px;
-    height: 59px;
+	width: 250px;
+    height: 50px;
 	margin-top: 15px;
 	background: #5680E9 0% 0% no-repeat padding-box;
 	border-radius: 30px;
@@ -836,7 +875,7 @@ color: #FFFFFF;
 opacity: 1;
 }
 #referafriend{
-	width: 150px;
+	width: 100px;
 }
 #referafriendbtn{
 	width: 350px;
@@ -862,6 +901,7 @@ font: monts normal medium 16px/19px monts;
 letter-spacing: 0px;
 color: #FFFFFF;
 opacity: 1;
+margin-top: 4px;
 }
 .signupbtn
 {
@@ -906,7 +946,7 @@ opacity: 1;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	margin-top: 150px;
+	/* margin-top: 150px; */
 }
 .ourteam_botttom>p{
 	font-size: 24px;
@@ -1336,8 +1376,8 @@ text-decoration-color: black;
 }
 
 .navbar-custom .navbar-brand.logo-image img {
-width: 213px;
-height: 50px;
+width: 180px;
+height: auto;
 float: left;
 }
 .navbar-custom .navbar-brand.logo-text {
@@ -1542,7 +1582,7 @@ font: normal normal medium 25px/40px monts;
 letter-spacing: 0px;
 color: #212121;
 opacity: 1;
-line-height: 3;
+line-height: 2;
 }
 
 .team-box img
@@ -1604,7 +1644,7 @@ margin-top: -35px;
 /*********************/
 .header {
 background-image: url("../images/headermainbg.png");
-background-size: 100% 879px;
+background-size: 100% 700px;
 background-repeat: no-repeat;
 }
 .header .header-content {
@@ -1636,7 +1676,8 @@ margin-top: 20px;
 text-align: left;
 letter-spacing: 2.5px;
 color: #FFFFFF;
-text-transform: uppercase;
+/* text-transform: uppercase; */
+font-size: 1.3rem;
 opacity: 1;
 line-height: 2;
 }
@@ -1686,6 +1727,8 @@ box-shadow: 10px 10px 80px #7B7BFD26;
 border-radius: 20px;
 opacity: 1;
 border: none;
+min-width: 28%;
+margin-bottom: 20px;
 }
 .cards-1 {
 padding-top: 3.25rem;
@@ -1818,6 +1861,7 @@ letter-spacing: 0px;
 color: #212121;
 opacity: 1;
 font-size: 14px;
+margin-left: 10px;
 }
 .lightbox-basic hr {
 width: 2.5rem;
@@ -2335,14 +2379,11 @@ text-align: left;
 /*     19. Media Queries     */
 /*****************************/	
 /* Min-width width 550px */
-@media only screen and (min-width: 200) and (max-width: 766px) {
-	.ourteam-bg
-{
-background: none;
-}
-}
-@media only screen and (min-width: 200px) and (max-width: 500px) {
 
+@media only screen and (min-width: 200px) and (max-width: 500px) {
+.team_footer{
+	margin-top: 800px !important;
+}
 }
 @media (max-width: 550px)
 {
@@ -2378,6 +2419,8 @@ background: none;
 	font-size: 24px;
 	font-weight: 700;
 	margin-left: 20px;
+	margin-top: 130px;
+	margin-bottom: -30px;
 	}
 	.cont-ourteam
 	{
@@ -2391,6 +2434,15 @@ background: none;
 	margin-top: 0px;
 	margin-left: -54px !important;
 	}
+	.forgetpassword
+{
+text-align: center;
+/* font-size: 14px;
+letter-spacing: 0px;
+color: #313131; */
+margin-top: 15px;
+margin-left: 25px;
+}
 	.team-box
 	{
 	text-align: center;
@@ -2407,6 +2459,7 @@ background: none;
 	.card{
 		width: 330px;
 		margin-left: -28px;
+		margin-top: 25px;
 	}
 	.setting{
 		display: flex;
@@ -2446,6 +2499,10 @@ background: none;
 	}
 	.referafriend_heading{
 		font-size: 32px;
+		margin-left: -22px;
+	}
+	#colla_para{
+		margin-left: -24px;
 	}
 	#referafriendbtn{
 		width: 180px;
@@ -2478,10 +2535,11 @@ background: none;
 	}
 	#ourteam_text{
 		font-size: 13px !important;
-		margin-right: 5px;
+		margin-right: 5px !important;
+		margin-left: 5px;
 	}
 	#ourteam_btn{
-		margin-top: 50px !important;
+		margin-top: -32px !important;
 	}
 	.ourteam_footer{
 		margin-top: 950px !important;
@@ -2520,24 +2578,29 @@ background: none;
 	.ourteam-btn {
 		width: 150px;
 		height: 45px;
-		background: #4e73e5 0% 0% no-repeat padding-box;
-		color: #fff;
+		background: #fff;
+		color: #000000;
 		font-size: 14px;
 		margin-left: 40px;
+		box-shadow: 4px 5px 31px #4e73e5;
 		
 	}
 	.creator_data>p{
 		font-size: 12px;
 	}
 	.header .p-large {
-		margin-top: 20px;
+		margin-top: -10px;
 		text-align: left;
 		letter-spacing: 4px;
 		line-height: 3;
 		color: #FFFFFF;
 		text-transform: uppercase;
 		opacity: 1;
-		font-size: 14px;
+		font-size: 12px;
+	}
+	
+	#banner_heading{
+		font-size: 1.8rem !important;
 	}
 	.text-container h3 {
 		text-align: left;
@@ -2553,7 +2616,7 @@ background: none;
 
 	.header {
 		background-image: url(../images/mobile_bg.png);
-		/* background-size: 100% 879px; */
+		background-size: 100% 879px;
 		background-repeat: no-repeat;
 		width: 100%;
 		height: auto;
@@ -2615,10 +2678,7 @@ background: none;
 	{
 	padding: 20px;
 	}
-.uname-box
-	{
-		width:250px;
-	}
+
 .uname-boxh
 	{
 		width: 200px;
@@ -2797,7 +2857,7 @@ width: 60%;
 text-align: left;
 }
 .header .text-container {
-margin-top: 4rem;
+/* margin-top: 4rem; */
 margin-bottom: 0;
 }
 .header .image-container {
@@ -3110,7 +3170,7 @@ margin-left: 1.75rem;
 	padding: 6px 14px;
 	text-decoration: none;
 	transition: background-color .3s;
-	border-radius: 100%;
+	border-radius: 10px;
 	margin: 0 4px;
 	margin-top: 60px;
   }
@@ -3136,6 +3196,25 @@ margin-left: 1.75rem;
    
 	   } 
 	}
+	@media only screen and (min-width: 450px) and (max-width: 850px) {
+		.reviews_box {
+			margin-left: 144px !important;
+			
+		   }
+		   #fullName{
+			   width: 550px !important;
+		   }
+		   #message{
+			   width: 550px !important;
+			   height: 185px !important;
+		   }
+		}
+		@media only screen and (min-width: 300px) and (max-width: 450px) {
+		.select_ratings{
+		   margin-left: 108px !important;
+		}
+		
+		}
 
 p{
 font-family: Montserrat;

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
+	<meta property="og:site_name" content="" /> <!-- website name -->
+	<meta property="og:site" content="" /> <!-- website link -->
+	<meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
+	<meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+	<meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+	<meta property="og:type" content="article" />
+
+    <!-- Website Title -->
+    <title>Guideology - For Future Dental Students</title>
+    
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">  
+    <link href="../css/bootstrap.css" rel="stylesheet">
+      <link href="../css/fontawesome-all.css" rel="stylesheet">
+      <link href="../css/swiper.css" rel="stylesheet">
+      <link href="../css/magnific-popup.css" rel="stylesheet">
+      <link href="../css/styles.css" rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-database.js"></script>
+	<!-- Favicon  -->
+    <link rel="icon" href="../images/icon.png">
+    <style type="text/css">
+      .navbar-nav {
+      margin-left: auto;
+      }
+      .select_ratings {
+display: flex;
+padding: 0;
+margin: 0;
+margin-top: 10px !important;
+}
+
+.select_ratings li {
+list-style-type: none
+}
+
+.select_ratings-item {
+border: 1px solid #fff;
+cursor: pointer;
+font-size:2em;
+color: #5680E9;
+}
+
+/* initial: make all stars full */
+.select_ratings-item::before {
+content: "\2605";
+}
+
+/* make until the clicked star (the rest) empty */
+.select_ratings-item.active ~ .select_ratings-item::before {
+content: "\2606";
+}
+
+/* on hover make all full */
+.select_ratings:hover .select_ratings-item::before {
+content: "\2605";
+}
+
+/* make until the hovered (the rest) empty */
+.select_ratings-item:hover ~ .select_ratings-item::before {
+content: "\2606";
+}
+@media only screen and (min-width: 450px) and (max-width: 850px) {
+        .card{
+         min-width: 102% !important;
+    margin-left: 27px !important;
+    
+        }
+   }
+   @media only screen and (min-width: 300px) and (max-width: 750px) {
+        .uname-box{
+        width: 270px !important;
+        margin-left: -15px;
+        }
+        .submit_btn{
+           margin-left: 0px !important;
+        }
+        #reviews_heading{
+           margin-left: 0px !important;
+        }
+        .select_ratings{
+           margin-left: 95px !important;
+           margin-top: -20px !important;
+           margin-bottom: -20px !important;
+        }
+        .ourteam_heading{
+           margin-top: -40px !important;
+        }
+   }
+
+   </style>
+</head>
+<body data-spy="scroll" data-target=".fixed-top">
+    
+    <!-- Preloader -->
+	<div class="spinner-wrapper">
+        <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+    <!-- end of preloader -->
+    
+
+        <!-- Navigation -->
+           <nav class="navbar navbar-expand-lg navbar-light navbar-custom fixed-top" style="padding: 5px 25px;">
+         <div class="container">
+            <a class="navbar-brand logo-image" href="../index.html"><img src="../images/guidology-color.png" alt="alternative"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               <br>
+               <ul class="navbar-nav">
+                  <li class="nav-item">
+                     <a  href="./login.html" style="text-decoration: none;">
+                     <button type="button" class="loginbtn nav-item nav-link " id="loginbtn">Log In</button>
+                     </a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="sign-up.html">
+                     <button type="button" class="signupbtn nav-item nav-link" id="signupbtn"> Sign Up</button>
+                     </a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </nav> 
+      <div class="col-md-12" style="margin-top: 150px;">
+        <h1 class="ourteam_heading" style="color: black !important;"> Read What Students Say About Us </h1>
+    <p style="text-align: center; margin-right: 38px;" id="ourteam_text">
+        <div class="ratings_stars d-flex flex-row justify-content-center mt-5">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <p style="margin-left: 20px; font-size: 20px; margin-top: -5px;"><strong> 180 Total  Reviews </strong> </p>
+         </div>
+        <!-- The Guideology team works tirelessly to ensure all of our students are provided with up-to-date and accurate material that will guide them through their preferred careers. Our team was carefully hand-picked to ensure that our students will have all the knowledge they need. Guideology is a professional team of designers, developers, writers, students, and teachers.     -->
+    </p>
+    </div>
+     
+    <div class="col-md-12 d-flex flex-lg-row justify-content-center mt-5" id="reviews_heading" style="margin-left: 35px;">
+      <h1 class="ourteam_heading" style="color: black !important;"> Review Guideology </h1>
+  <p style="text-align: center; margin-right: 38px;" id="ourteam_text">
+    <ul class="select_ratings">
+       <li class="select_ratings-item active" data-rate="1"></li>
+       <li class="select_ratings-item " data-rate="2"></li>
+       <li class="select_ratings-item" data-rate="3"></li>
+       <li class="select_ratings-item" data-rate="4"></li>
+       <li class="select_ratings-item" data-rate="5"></li>
+       </ul>
+  </p>
+  </div>
+    <form id="reviewForm" onsubmit="return false">
+      <div class=" mt-5 reviews_box">
+          <div class="form-row">
+              <div class="form-group col-6">
+                <input type="hidden" id='hiddenId' />
+                <input type="text" id='fullName' class="form-control uname-box" placeholder="Full Name" required />
+                  <textarea class="form-control uname-box mt-2" id="message" rows="5" placeholder="Write your feedback here..." required></textarea>
+                </div>
+          </div>
+          <button type="submit" class="btn btn-primary long-btn-su submit_btn" style="margin-bottom: 30px; margin-left:90px;">Submit</button>
+          <p style="font-size: 14px; color: #5680E9; text-align: left; margin-top: -13px;margin-left: 115px;" id="reviewsSubmitted"></p>
+      </div>
+     </form>
+<!-- Reviews Cards start -->
+<div class="mx-5" style="max-width: 1920px; padding-right: 75px;">
+    <!-- <div class="row">
+       <div class="col-lg-12">
+          <div class="above-heading" >What's I<u style="content: left;height: 6px;border-radius: 3px;margin-top: 5px;*">ncluded</u>
+          </div>
+       </div>
+    </div> -->
+    <br><br>
+    <div class="">
+       <div class="row g-3">
+          <div class="col-lg-4">
+             <div class="card card-margin">
+                <div class="card-header no-border">
+                </div>
+                <div class="card-body pt-0">
+                   <div class="widget-49">
+                      <div class="widget-49-title-wrapper">
+                         <div class="">
+                            <!-- <img class="img card_icon" src="images/imac.png" alt="alternative"> -->
+                         </div>
+                         <div class="widget-49-meeting-info">
+                            <h4 class="card-title iwanttofixthis" style="margin-left: 0px; margin-top: -20px !important;">Bailey B.</h4>
+
+                         </div>
+                        
+                         <div class="student_reviewa">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+          <div class="col-lg-4">
+             <div class="card card-margin">
+                <div class="card-header no-border">
+                </div>
+                <div class="card-body pt-0">
+                   <div class="widget-49">
+                      <div class="widget-49-title-wrapper">
+                         <div class="">
+                            <!-- <img class="img card_icon" src="images/development.png" alt="alternative"> -->
+                         </div>
+                         <div class="widget-49-meeting-info">
+                            <h4 class="card-title" style="margin-left: 0px; margin-top: -20px !important;">Carolyn M.</h4>
+                         </div>
+                         <div class="student_reviewa">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked" style="color: lightgray;"></span>
+                         </div>
+                
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+          <div class="col-lg-4">
+             <div class="card card-margin">
+                <div class="card-header no-border">
+                </div>
+                <div class="card-body pt-0">
+                   <div class="widget-49">
+                      <div class="widget-49-title-wrapper">
+                         <div class="">
+                            <!-- <img class="img card_icon" src="images/record.png" alt="alternative"> -->
+                         </div>
+                         <div class="widget-49-meeting-info">
+                            <h4 class="card-title" style="margin-left: 0px; margin-top: -20px !important;">Megan H.</h4>
+                         </div>
+                           <div class="student_reviewa">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+       <div class="row">
+          <div class="col-lg-4">
+             <div class="card card-margin">
+                <div class="card-header no-border">
+                </div>
+                <div class="card-body pt-0">
+                   <div class="widget-49">
+                      <div class="widget-49-title-wrapper">
+                         <div class="">
+                            <!-- <img class="img card_icon" src="images/support.png" alt="alternative"> -->
+                         </div>
+                         <div class="widget-49-meeting-info">
+                            <h4 class="card-title" style="margin-left: 0px; margin-top: -20px !important;">Richard E.</h4>
+                         </div>
+                           <div class="student_reviewa">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked" style="color: lightgray;"></span>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+          <div class="col-lg-4">
+             <div class="card card-margin">
+                <div class="card-header no-border">
+                </div>
+                <div class="card-body pt-0">
+                   <div class="widget-49">
+                      <div class="widget-49-title-wrapper">
+                         <div class="">
+                         </div>
+                         <div class="widget-49-meeting-info">
+                            <h4 class="card-title" style="margin-left: 0px; margin-top: -20px !important;">Vincent R.</h4>
+                         </div>
+                           <div class="student_reviewa">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+          <div class="col-lg-4">
+             <div class="card card-margin">
+                <div class="card-header no-border">
+                </div>
+                <div class="card-body pt-0">
+                   <div class="widget-49">
+                      <div class="widget-49-title-wrapper">
+                         <div class="">
+                         </div>
+                         <div class="widget-49-meeting-info">
+                            <h4 class="card-title" style="margin-left: 0px; margin-top: -20px !important;">Victoria D.</h4>
+                         </div>
+                           <div class="student_reviewa">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked" style="color: lightgray;"></span>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+       <div class="row">
+          <div class="col-lg-4">
+             <div class="card card-margin">
+                <div class="card-header no-border">
+                </div>
+                <div class="card-body pt-0">
+                   <div class="widget-49">
+                      <div class="widget-49-title-wrapper">
+                         <div class="">
+                            <!-- <img class="img card_icon" src="images/support.png" alt="alternative"> -->
+                         </div>
+                         <div class="widget-49-meeting-info">
+                            <h4 class="card-title" style="margin-left: 0px; margin-top: -20px !important;">Tom C.</h4>
+                         </div>
+                           <div class="student_reviewa">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                         </div>
+                      </div>
+                      <p style="text-align: left; margin-top: 0px !important;" class="card-text fst-box-desc"></p>
+                   </div>
+                </div>
+             </div>
+          </div>
+          <div class="col-lg-4">
+             <div class="card card-margin">
+                <div class="card-header no-border">
+                </div>
+                <div class="card-body pt-0">
+                   <div class="widget-49">
+                      <div class="widget-49-title-wrapper">
+                         <div class="">
+                         </div>
+                         <div class="widget-49-meeting-info">
+                            <h4 class="card-title" style="margin-left: 0px; margin-top: -20px !important;">Kelly M.</h4>
+                         </div>
+                           <div class="student_reviewa">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                         </div>
+                      </div>
+                      <p style="text-align: left; margin-top: 0px !important;" class="card-text fst-box-desc"></p>
+                   </div>
+                </div>
+             </div>
+          </div>
+          <div class="col-lg-4">
+             <div class="card card-margin">
+                <div class="card-header no-border">
+                </div>
+                <div class="card-body pt-0">
+                   <div class="widget-49">
+                      <div class="widget-49-title-wrapper">
+                         <div class="">
+                            <!-- <img class="img card_icon" src="images/iphone.png" alt="alternative"> -->
+                         </div>
+                         <div class="widget-49-meeting-info">
+                            <h4 class="card-title" style="margin-left: 0px; margin-top: -20px !important;">Mike B.</h4>
+                         </div>
+                           <div class="student_reviewa">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked" style="color: lightgray;"></span>
+                         </div>
+                      </div>
+                      <p style="text-align: left; margin-top: 0px !important;" class="card-text fst-box-desc"></p>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
+ <br><br>
+<!-- Reviews Cards end -->
+<div class="col-xl-12">
+   <div class="stdbtn">
+       <div class="pagination">
+          <a href="./studentreviews_4.html"><strong style="color: #212121;" >&#x3C;</strong></a>
+          <a href="./studentreviews.html">1</a>
+          <a href="./studentreviews_2.html">2</a>
+          <a href="./studentreviews_3.html">3</a>
+          <a href="./studentreviews_4.html">4</a>
+          <a href="./studentreviews_5.html">5</a>
+          <a href="./studentreviews_6.html" class="active">6</a>
+          <a href="./allreviews.html" >View AllReviews</a>
+          <a href="./allreviews.html"><strong style="color: #5680E9;" >&#x3E;</strong></a>
+       </div>
+    </div>
+
+ </div>
+	<!-- Footer start -->
+   <div id="footer">
+
+   </div>
+   <!-- Footer end-->
+    <!-- Scripts -->
+    <script src="../js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="../js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
+    <script src="../js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="../js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="../js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="../js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
+    <script src="../js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
+    <script src="../js/scripts.js"></script> <!-- Custom scripts -->
+    <script src="../js/reviews.js"></script>
+    <script src="../js/footer.js"></script>
+    <script src="../js/subscribe.js"></script>
+</body>
+</html>

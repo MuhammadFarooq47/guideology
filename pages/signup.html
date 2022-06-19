@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Tivo is a HTML landing page template built with Bootstrap to help you crate engaging presentations for SaaS apps and convert visitors into users.">
-    <meta name="author" content="Inovatik">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
     <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
 	<meta property="og:site_name" content="" /> <!-- website name -->
@@ -19,10 +19,9 @@
 
     <!-- Website Title -->
     <title>Guideology - For Future Dental Students</title>
-    <!-- Tivo -->
-    
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"> 
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />  
     <link href="../css/bootstrap.css" rel="stylesheet">
       <link href="../css/fontawesome-all.css" rel="stylesheet">
@@ -59,6 +58,34 @@
          .navbar-nav {
          margin-left: auto;
          }
+         #show_password{
+            margin-top: 45px;
+         }
+         #phone_number{
+            width: 410px;
+         }
+         
+      @media only screen and (min-width: 299px) and (max-width: 699px) {
+        .form-control{
+           width: 250px;
+        }
+        #phone_number{
+            width: 250px;
+         }
+         #program{
+            width: 250px;
+         }
+      }
+      @media only screen and (min-width: 700px) and (max-width: 991px) {
+         #phone_number{
+            width: 280px;
+         }
+      }
+         @media (max-width: 550px){
+            #show_password{
+               margin-top: 5px;
+            }
+         }
       </style>
 </head>
 <body data-spy="scroll" data-target=".fixed-top">
@@ -89,11 +116,11 @@
                      <button type="button" class="loginbtn nav-item nav-link " id="loginbtn">Log In</button>
                      </a>
                   </li>
-                  <li class="nav-item">
+                  <!-- <li class="nav-item">
                      <a class="nav-link" href="sign-up.html">
                      <button type="button" class="signupbtn nav-item nav-link" id="signupbtn"> Sign Up</button>
                      </a>
-                  </li>
+                  </li> -->
                </ul>
             </div>
          </div>
@@ -104,45 +131,49 @@
 	<div class="inner-box-su"  >
 			<h1>Sign Up</h1>
        
-<form action="#" onsubmit="onSubmit()">
+<form action="#" onsubmit="return false">
   
    <div class="form-row">
       <div class="form-group col-md-12">
          <label class="uname"> Choose Your Program</label>
-            <select name="program" id="program" class="custom-select" style="border-color: #5680E9;">
-                <option selected> Select...</option>
-                <option value="Dental"> Dental</option>
-                <option value="Optometry"> Optometry</option>
-                <option value="Pharmacy"> Pharmacy</option>
+            <select name="program" id="program" class="custom-select" style="border-color: #5680E9;" required>
+                <option value=""> Select...</option>
+                <option value="Dental" required> Dental</option>
+                <option value="Optometry" required> Optometry</option>
+                <option value="Pharmacy" required> Pharmacy</option>
+                <option value="Medical" required> Medical</option>
+                <option value="PA" required> PA</option>
             </select>
        </div>
    </div>
 <div class="form-row">
   <div class="form-group col-md-6">
     <label class="uname">Full Name</label>
-    <input type="text" class="form-control uname-box" id="full_name" aria-describedby="emailHelp"  placeholder="Full Name">
+    <input type="text" class="form-control uname-box" id="full_name" aria-describedby="emailHelp"  placeholder="Full Name" required>
   </div>
   <div class="form-group col-md-6">
-   <label class="uname">Phone #</label>
-   <input type="number" class="form-control uname-box" id="phone_number" aria-describedby="emailHelp"  placeholder="Phone #">
+   <label class="uname">Phone #</label> <br>
+   <input type="number" class="form-control uname-box" id="phone_number" aria-describedby="emailHelp"  placeholder="Phone #" required>
  </div>
 </div>
 <div class="form-row">
   <div class="form-group col-md-6">
     <label class="uname">Email</label>
-    <input type="email" class="form-control uname-box" id="email" aria-describedby="emailHelp"  placeholder="Email">
+    <input type="email" class="form-control uname-box" id="email" aria-describedby="emailHelp"  placeholder="Email" required>
   </div>
   <div class="form-group col-md-6">
     <label class="uname">Username</label>
-    <input type="text" class="form-control uname-box" id="username" aria-describedby="emailHelp"  placeholder="Username">
+    <input type="text" class="form-control uname-box" id="username" aria-describedby="emailHelp"  placeholder="Username" required>
   </div>
  
 </div>
 <div class="form-row">
   <div class="form-group col-md-6">
     <label class="uname">Create Password</label>
-    <input type="password" class="form-control uname-box" id="password" aria-describedby="emailHelp"  placeholder="Create New Password">
+    <input type="password" class="form-control uname-box" id="password" aria-describedby="emailHelp"  placeholder="Create New Password" required>
   </div>
+  <div class="col-md-6">
+   <input type="checkbox" onclick="showPassword()" id="show_password">  <a href="#" onclick="showPassword()"> Show Password </a>  </div>
 </div>	
 	
 
@@ -159,80 +190,8 @@
 	</div>
 	 <!-- Signup Form End Here -->
 	<!-- Footer start -->
-	<div id="footer-fix-id" style="max-width: 1920px; margin-top: 160px">
-      <div class="row g2 footer-og m-3" style="margin: 100px 0px;">
-         <div class="col-lg-2 col-md-6 footer-fst">
-           <a href="../index.html"><img src="../images/footerlogo.png"> </a>
-            <ul>
-               <li style="margin-top: 30px;">
-                  <button class="btn-android"><img src="../images/android-icon.png" style="width: 37px; height: 33px; float: left; margin-left:15px;"><span  class="android-text">Download</span></button>
-               </li>
-               <liv>
-                  <button class="btn-ios" style="margin-top: 15px;"><img src="../images/ios-logo.png" style="width: 37px; height: 33px; float: left; margin-left:15px; margin-top: 20;"><span  class="android-text">Download</span></button>
-               </liv>
-            </ul>
-         </div>
-         <div class="col-lg-2 col-md-6 footer-fst" id="footer_fst">
-            <ul>
-               Products
-              <a href="./selectaguide.html"> <li class="footer-gap">Pre-Dental Guide</li></a>
-              <a href="./prepharmacyguide.html"> <li>Pre-Pharmacy Guide</li></a>
-               <a href="./premedicalguide.html"><li>Pre-Medical Guide</li></a>
-               <a href="./preundergradguide.html"><li>Pre-Undergrad Guide</li></a>
-               <a href="./referafreiend.html"><li>Refer A Friend</li></a>
-            </ul>
-            <ul>
-               Other
-               <a href="./termsofuse.html"><li class="footer-gap">Terms of Use</li></a>
-               <a href="./privacypolicy.html"><li>Privacy Policy</li></a>
-            </ul>
-         </div>
-         <div class="col-lg-2 col-md-6 footer-fst">
-            <ul>
-               About Guideology
-               <a href="./missionstatement.html"><li class="footer-gap">Our Mission Statement</li></a>
-               <a href="./studentreviews.html"> <li>Student reviews</li> </a>
-               <a href="./ourteam.html"><li>Our Team</li></a>
-               <li><br></li>
-               <li><br></li>
-            </ul>
-            <ul>
-               Business Inquiries
-               <a href="./contactus.html"><li class="footer-gap">Contact us</li></a>
-               <a href="./collaborate.html"><li>Collaborations</li></a> 
-               <a href="./affiliateprogram.html"> <li>Affiliate Program</li></a>
-            </ul>
-         </div>
-         <div class="col-lg-2 col-md-6 footer-fst">
-            <ul>
-               Support
-               <a href="./contactusforsupport.html"><li class="footer-gap">Contact us</li></a>
-               <a href="./helpcenter.html"><li>Help Center</li></a>
-              <a href="./forum/index.html"> <li>Forums</li> </a>
-               <li><br></li>
-               <li><br></li>
-            </ul>
-            <ul>
-               Social
-               <li class="footer-gap">Tiktok</li>
-               <li>Instagram</li>
-            </ul>
-         </div>
-         <div class="col-lg-3 footer-fst">
-            <ul>
-               Subscribe for Updates
-               <li class="footer-gap">
-                  <input type="text" class="newsletter-box" style="padding: 10px;" placeholder="Phone Number">
-               </li>
-               <li>
-                  <button type="submit" class="subscribe">Subscribe</button>
-               </li>
-            </ul>
-         </div>
-      </div>
-      <div class="row m-3">
-         <div class="col-lg-12 copyright-txt">© 2022 Guideology</div>
-      </div>
+   <div id="footer">
+
    </div>
    <!-- Footer end-->
     <!-- Scripts -->
@@ -245,9 +204,33 @@
     <script src="../js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
     <script src="../js/scripts.js"></script> <!-- Custom scripts -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="../js/footer.js"></script>
   <script>
     AOS.init();
   </script>
       <script src="../js/auth.js"></script>
+      <script src="../js/subscribe.js"></script>
+             <!-- Phone Country Code start -->
+             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.15/css/intlTelInput.css">
+             <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.15/js/intlTelInput.js"></script>
+            <script>
+             // Vanilla Javascript
+             var input = document.querySelector("#phone_number");
+             window.intlTelInput(input,({
+                   // options here
+             }));
+             </script>
+             
+             <script>
+              $(document).ready(function() {
+                 $('.iti__flag-container').click(function() { 
+                   var countryCode = $('.iti__selected-flag').attr('title');
+                   var countryCode = countryCode.replace(/[^0-9]/g,'')
+                   $('#phone_number').val("");
+                   $('#phone_number').val("+"+countryCode+" "+ $('#phone_number').val());
+                });
+             });
+             </script>
+                 <!-- Phone Country Code End -->
    </body>
 </html>

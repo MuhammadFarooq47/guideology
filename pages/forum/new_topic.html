@@ -21,6 +21,8 @@
 
         <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
         <link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.css" media="screen" />
+        <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-database.js"></script>
          <!-- Favicon  -->
       <link rel="icon" href="../../images/icon.png">
 
@@ -28,20 +30,6 @@
     <body>
 
         <div class="container-fluid">
- <!-- Slider -->
- <div class="tp-banner-container">
-    <div class="tp-banner" >
-        <ul>	
-            <!-- SLIDE  -->
-            <li data-transition="fade" data-slotamount="7" data-masterspeed="1500" >
-                <!-- MAIN IMAGE -->
-                <img src="images/slide3.jpg"  alt="slidebg1"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
-                <!-- LAYERS -->
-            </li>
-        </ul>
-    </div>
-</div>
-<!-- //Slider -->
 
 <div class="headernav">
     <div class="container">
@@ -101,7 +89,33 @@
                     </div>
                 </div>
 
-
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-xs-12">
+                            <div class="pull-left"><a href="#" class="prevnext"><i class="fa fa-angle-left"></i></a></div>
+                            <div class="pull-left">
+                                <ul class="paginationforum">
+                                    <li class="hidden-xs"><a href="#">1</a></li>
+                                    <li class="hidden-xs"><a href="#">2</a></li>
+                                    <li class="hidden-xs"><a href="#">3</a></li>
+                                    <li class="hidden-xs"><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li><a href="#">6</a></li>
+                                    <li><a href="#" class="active">7</a></li>
+                                    <li><a href="#">8</a></li>
+                                    <li class="hidden-xs"><a href="#">9</a></li>
+                                    <li class="hidden-xs"><a href="#">10</a></li>
+                                    <li class="hidden-xs hidden-md"><a href="#">11</a></li>
+                                    <li class="hidden-xs hidden-md"><a href="#">12</a></li>
+                                    <li class="hidden-xs hidden-sm hidden-md"><a href="#">13</a></li>
+                                    <li><a href="#">1586</a></li>
+                                </ul>
+                            </div>
+                            <div class="pull-left"><a href="#" class="prevnext last"><i class="fa fa-angle-right"></i></a></div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-8 col-md-8">
@@ -110,7 +124,7 @@
 
                             <!-- POST -->
                             <div class="post">
-                                <form action="#" class="form newtopic" method="post">
+                                <form id="forumForm"  class="form newtopic" onsubmit="return false">
                                     <div class="topwrap">
                                         <div class="userinfo pull-left">
                                             <div class="avatar">
@@ -125,22 +139,29 @@
                                         <div class="posttext pull-left">
 
                                             <div>
-                                                <input type="text" placeholder="Enter Topic Title" class="form-control" />
+                                                <input type="hidden" id='hiddenId' />
+                                                <input type="text" placeholder="Enter Topic Title" class="form-control" id="title" required />
                                             </div>
 
                                             <div class="row">
                                                 <div class="col-lg-6 col-md-6">
-                                                    <select name="category" id="category"  class="form-control" >
-                                                        <option value="" disabled selected>Select Category</option>
-                                                        <option value="op1">Option1</option>
-                                                        <option value="op2">Option2</option>
+                                                    <select name="program" id="program"  class="form-control" required >
+                                                        <option value="" disabled selected>Select Program</option>
+                                                        <option value="Dental">Dental</option>
+                                                        <option value="Optometry">Optometry</option>
+                                                        <option value="Pharmacy">Pharmacy</option>
+                                                        <option value="Medical">Medical</option>
+                                                        <option value="PA">PA</option>
                                                     </select>
                                                 </div>
                                                 <div class="col-lg-6 col-md-6">
-                                                    <select name="subcategory" id="subcategory"  class="form-control" >
-                                                        <option value="" disabled selected>Select Subcategory</option>
-                                                        <option value="op1">Option1</option>
-                                                        <option value="op2">Option2</option>
+                                                    <select name="category" id="category"  class="form-control" required >
+                                                        <option value="" disabled selected>Select Category</option>
+                                                        <option value="Before the entrance exam">Before the entrance exam</option>
+                                                        <option value="Taking the entrance exam"> Taking the entrance exam</option>
+                                                        <option value="The Application Process"> The Application Process</option>
+                                                        <option value="Interviewing"> Interviewing </option>
+                                                        <option value="Other Discussions">  Other Discussions</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -214,8 +235,10 @@
 
                                         <div class="pull-right postreply">
                                             <div class="pull-left smile"><a href="#"><i class="fa fa-smile-o"></i></a></div>
-                                            <div class="pull-left"><button type="submit" class="btn btn-primary">Post</button></div>
-                                            <div class="clearfix"></div>
+                                            
+                                            <button type="submit" class="btn btn-primary">Post</button>
+                                       
+                                            <!-- <div class="clearfix"></div> -->
                                         </div>
 
 
@@ -224,13 +247,12 @@
                                 </form>
                             </div><!-- POST -->
 
-                            <div class="row similarposts">
+                            <!-- <div class="row similarposts">
                                 <div class="col-lg-10"><i class="fa fa-info-circle"></i> <p>Similar Posts according to your <a href="#">Topic Title</a>.</p></div>
                                 <div class="col-lg-2 loading"><i class="fa fa-spinner"></i></div>
 
                             </div>
 
-                            <!-- POST -->
                             <div class="post">
                                 <div class="wrap-ut pull-left">
                                     <div class="userinfo pull-left">
@@ -261,10 +283,10 @@
                                     <div class="time"><i class="fa fa-clock-o"></i> 24 min</div>                                    
                                 </div>
                                 <div class="clearfix"></div>
-                            </div><!-- POST -->
+                            </div>
 
 
-                            <!-- POST -->
+                            
                             <div class="post">
                                 <div class="wrap-ut pull-left">
                                     <div class="userinfo pull-left">
@@ -295,10 +317,10 @@
                                     <div class="time"><i class="fa fa-clock-o"></i> 15 min</div>                                    
                                 </div>
                                 <div class="clearfix"></div>
-                            </div><!-- POST -->
+                            </div>
 
 
-                            <!-- POST -->
+                            
                             <div class="post">
                                 <div class="wrap-ut pull-left">
                                     <div class="userinfo pull-left">
@@ -329,7 +351,8 @@
                                     <div class="time"><i class="fa fa-clock-o"></i> 2 days</div>                                    
                                 </div>
                                 <div class="clearfix"></div>
-                            </div><!-- POST -->
+                            </div> -->
+                            <!-- POST -->
 
 
 
@@ -338,6 +361,22 @@
 
                         </div>
                         <div class="col-lg-4 col-md-4">
+                            <!-- -->
+                           <div class="sidebarblock">
+                            <h3>Programs</h3>
+                            <div class="divline"></div>
+                            <div class="blocktxt">
+                                <ul class="cats">
+                                    <li><a href="#">Dental <span class="badge pull-right">20</span></a></li>
+                                    <li><a href="#"> Optometry <span class="badge pull-right">10</span></a></li>
+                                    <li><a href="#">Pharmacy <span class="badge pull-right">50</span></a></li>
+                                    <li><a href="#">Medical <span class="badge pull-right">50</span></a></li>
+                                    <li><a href="#">PA <span class="badge pull-right">50</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- -->
 
                            <!-- -->
                            <div class="sidebarblock">
@@ -345,8 +384,8 @@
                             <div class="divline"></div>
                             <div class="blocktxt">
                                 <ul class="cats">
-                                    <li><a href="#">Before the DAT <span class="badge pull-right">20</span></a></li>
-                                    <li><a href="#">Taking the DAT <span class="badge pull-right">10</span></a></li>
+                                    <li><a href="#">Before the entrance exam <span class="badge pull-right">20</span></a></li>
+                                    <li><a href="#"> Taking the entrance exam <span class="badge pull-right">10</span></a></li>
                                     <li><a href="#">The Application Process <span class="badge pull-right">50</span></a></li>
                                     <li><a href="#">Interviewing <span class="badge pull-right">36</span></a></li>
                                     <li><a href="#">Other Discussions <span class="badge pull-right">41</span></a></li>
@@ -410,7 +449,7 @@
                         </div>
 
                         <!-- -->
-                        <div class="sidebarblock">
+                        <!-- <div class="sidebarblock">
                             <h3>Popular Threads</h3>
                             <div class="divline"></div>
                             <div class="blocktxt">
@@ -432,7 +471,7 @@
                             <div class="blocktxt">
                                 <a href="#">Loud and Brave: Saudi Women Set to Protest Driving Ban</a>
                             </div>
-                        </div>
+                        </div> -->
 
 
 
@@ -443,33 +482,7 @@
 
 
 
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 col-xs-12">
-                            <div class="pull-left"><a href="#" class="prevnext"><i class="fa fa-angle-left"></i></a></div>
-                            <div class="pull-left">
-                                <ul class="paginationforum">
-                                    <li class="hidden-xs"><a href="#">1</a></li>
-                                    <li class="hidden-xs"><a href="#">2</a></li>
-                                    <li class="hidden-xs"><a href="#">3</a></li>
-                                    <li class="hidden-xs"><a href="#">4</a></li>
-                                    <li><a href="#">5</a></li>
-                                    <li><a href="#">6</a></li>
-                                    <li><a href="#" class="active">7</a></li>
-                                    <li><a href="#">8</a></li>
-                                    <li class="hidden-xs"><a href="#">9</a></li>
-                                    <li class="hidden-xs"><a href="#">10</a></li>
-                                    <li class="hidden-xs hidden-md"><a href="#">11</a></li>
-                                    <li class="hidden-xs hidden-md"><a href="#">12</a></li>
-                                    <li class="hidden-xs hidden-sm hidden-md"><a href="#">13</a></li>
-                                    <li><a href="#">1586</a></li>
-                                </ul>
-                            </div>
-                            <div class="pull-left"><a href="#" class="prevnext last"><i class="fa fa-angle-right"></i></a></div>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-                </div>
+               
 
 
             </section>
@@ -525,6 +538,7 @@
             });	//ready
 
         </script>
+        <script src="./js/forums.js"></script>
 
         <!-- END REVOLUTION SLIDER -->
     </body>

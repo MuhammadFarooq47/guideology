@@ -7,8 +7,8 @@
 
    <!-- SEO Meta Tags -->
    <meta name="description"
-      content="Tivo is a HTML landing page template built with Bootstrap to help you crate engaging presentations for SaaS apps and convert visitors into users.">
-   <meta name="author" content="Inovatik">
+      content="">
+   <meta name="author" content="">
 
    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
    <meta property="og:site_name" content="" /> <!-- website name -->
@@ -31,7 +31,11 @@
    <link href="../css/swiper.css" rel="stylesheet">
    <link href="../css/magnific-popup.css" rel="stylesheet">
    <link href="../css/styles.css" rel="stylesheet">
-
+   
+   <!-- Firebase -->
+   <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-firestore.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-database.js"></script>
 
    <!-- Favicon  -->
    <link rel="icon" href="../images/icon.png">
@@ -89,196 +93,131 @@
    <div class="container" style="align-items: center; margin-top: 50px;">
       <div class="row">
          <div class="col-lg-6" style="padding-right: 50px;">
-            <img src="../images/savings.png" class="rounded mx-auto d-block" alt="collaborate"  id="referafriend">
+            <img src="../images/savings.png" class="rounded mx-auto d-block" alt="collaborate" id="referafriend">
             <br>
             <p style="text-align: center;">
-                Our goal at <strong> Guideology</strong> is to help pre-dental students succeed in their goal of
-               attending their top dental school. Collaborating with organizations all around the US allows us to
-               accomplish that goal with a larger number of students in mind.
+               Our affiliate program is a way students can share Guideology to their audience all while earning $$$. This program rewards students for introducing Guideology to those in need of our help and knowledge. 
                <br>
                <br>
-               All organizations are welcome to fill out the form below. Please allow 1-3 business days for a response
-               from our team, if approved you will receive a custom discount code for you and your classmates to use.
-               T0hank you.
+               Everyone is welcome to fill out the form below. Please allow 1-3 business days for a response from our team, if approved you will receive your own unique discount code as well as a username and password to track your progress.
             </p>
 
 
          </div>
          <div class="col-lg-6" style="padding-left: 50px;">
             <h1 class="referafriend_heading"> Become An Affiliate </h1>
-            <p style="text-align: center; margin-right: 38px;">
-                Fill the form below and our team will get back to your shortly.</p>
-            <form style="align-items: center;">
+            <p id="colla_para">
+               Fill the form below and our team will get back to your shortly.</p>
+            <form style="align-items: center;" onsubmit="return false" id="affiliateProgram" >
                <div class="form-row">
                   <div class="col-md-6 col-12">
                      <div class="form-group">
+                        <input type="hidden" id='hiddenId' />
                         <label class="uname">Full Name</label>
-                        <input type="text" class="form-control uname-box" id="exampleInputEmail1"
-                           aria-describedby="emailHelp" placeholder="Full Name">
+                        <input type="text" class="form-control uname-box" id="fullName"
+                           aria-describedby="emailHelp" placeholder="Full Name" required>
                      </div>
                   </div>
                   <div class="col-md-6 col-12">
                      <div class="form-group">
                         <label class="uname">Email</label>
-                        <input type="email" class="form-control uname-box" id="exampleInputEmail1"
-                           aria-describedby="emailHelp" placeholder="Email">
+                        <input type="email" class="form-control uname-box" id="email"
+                           aria-describedby="emailHelp" placeholder="Email" required>
                      </div>
                   </div>
-                  </div>
+               </div>
                <div class="form-row">
                   <div class="col-md-6 col-12">
                      <div class="form-group">
                         <label class="uname">Phone #</label>
-                        <input type="text" class="form-control uname-box" id="exampleInputEmail1"
-                           aria-describedby="emailHelp" placeholder="Phone #">
+                        <input type="text" class="form-control uname-box" id="phone_number"
+                           aria-describedby="emailHelp" placeholder="Phone #" required>
                      </div>
                   </div>
                   <div class="col-md-6 col-12">
                      <div class="form-group">
                         <label class="uname">University</label>
-                        <input type="text" class="form-control uname-box" id="exampleInputEmail1"
-                           aria-describedby="emailHelp" placeholder="University">
+                        <input type="text" class="form-control uname-box" id="university"
+                           aria-describedby="emailHelp" placeholder="University" required>
                      </div>
                   </div>
-                  </div>
-                  <div class="form-row">
-                    <!-- <div class="col-md-6 col-12">
+               </div>
+               <div class="form-row">
+                  <!-- <div class="col-md-6 col-12">
                         <div class="form-group">
                            <label class="uname">Website Url</label>
                            <input type="number" class="form-control uname-box" id="exampleInputEmail1"
                               aria-describedby="emailHelp" placeholder="Enter your Website URL">
                         </div>
                      </div> -->
-                     <div class="col-md-6 col-12">
-                        <div class="form-group">
-                       <label class="uname">Add Social</label>
-                       <div class="input-group">
-                         <div class="input-group-prepend">
-                           <span class="input-group-text" id="inputGroupPrepend" style="background: none !important; border: 1px solid #5680E9;">
-                               <i class="bi bi-facebook"></i>
-                           </span>
-                         </div>
-                         <input type="text" class="form-control uname-box" id="validationCustomUsername" placeholder="Facebook Link" aria-describedby="inputGroupPrepend" required>
-                       </div>
+                  <div class="col-md-6 col-12">
+                     <div class="form-group">
+                        <label class="uname">Add Social <span
+                              style="font-size: 10px; color: grey; margin-bottom: 5px;">(Optional)</span> </label>
+                        <div class="input-group">
+                           <div class="input-group-prepend">
+                              <span class="input-group-text" id="inputGroupPrepend"
+                                 style="background: none !important; border: 1px solid #5680E9;">
+                                 <i class="bi bi-facebook"></i>
+                              </span>
+                           </div>
+                           <input type="text" class="form-control uname-box" id="facebook"
+                              placeholder="Facebook Link" aria-describedby="inputGroupPrepend">
+                        </div>
                      </div>
-                   </div>
                   </div>
-                 
-                 <div class="form-row">
-                 <div class="col-md-6 col-12">
-                     <div class="form-group">
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text " id="inputGroupPrepend" style="background: none !important; border: 1px solid #5680E9;">
-                            <i class="bi bi-instagram"></i>
-                        </span>
-                      </div>
-                      <input type="text" class="form-control uname-box" id="validationCustomUsername" placeholder="Instagram Link" aria-describedby="inputGroupPrepend" required>
-                    </div>
-                  </div>
-                </div>
-                 <div class="col-md-6 col-12">
-                     <div class="form-group">
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroupPrepend" style="background: none !important; border: 1px solid #5680E9;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tiktok" viewBox="0 0 16 16">
-                                <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3V0Z"/>
-                              </svg>
-                        </span>
-                      </div>
-                      <input type="text" class="form-control uname-box" id="validationCustomUsername" placeholder="Tiktok Link" aria-describedby="inputGroupPrepend" required>
-                    </div>
-                  </div>
-                </div>
-            </div>
-                  <div class="form-group col-md-6">
-                     <button type="submit" class="btn btn-primary long-btn-su" id="referafriendbtn">submit</button>
-                  </div>
-               </form>
                </div>
-               
+
+               <div class="form-row">
+                  <div class="col-md-6 col-12">
+                     <div class="form-group">
+                        <div class="input-group">
+                           <div class="input-group-prepend">
+                              <span class="input-group-text " id="inputGroupPrepend"
+                                 style="background: none !important; border: 1px solid #5680E9;">
+                                 <i class="bi bi-instagram"></i>
+                              </span>
+                           </div>
+                           <input type="text" class="form-control uname-box" id="insta"
+                              placeholder="Instagram Link" aria-describedby="inputGroupPrepend">
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-6 col-12">
+                     <div class="form-group">
+                        <div class="input-group">
+                           <div class="input-group-prepend">
+                              <span class="input-group-text" id="inputGroupPrepend"
+                                 style="background: none !important; border: 1px solid #5680E9;">
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-tiktok" viewBox="0 0 16 16">
+                                    <path
+                                       d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3V0Z" />
+                                 </svg>
+                              </span>
+                           </div>
+                           <input type="text" class="form-control uname-box" id="tiktok"
+                              placeholder="Tiktok Link" aria-describedby="inputGroupPrepend">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="form-group">
+                  <button type="submit" class="btn btn-primary long-btn-su" id="referafriendbtn">Submit</button>
+                  <p style="font-size: 12px; color: #5680E9;" id="affiliateProgram_para"></p>
+               </div>
+            </form>
          </div>
+
       </div>
+   </div>
    </div>
 
    <!--rest-->
 
-	<!-- Footer start -->
-	<div id="footer-fix-id" style="max-width: 1920px; margin-top: 160px">
-      <div class="row g2 footer-og m-3" style="margin: 100px 0px;">
-         <div class="col-lg-2 footer-fst">
-           <a href="../index.html"><img src="../images/footerlogo.png"> </a>
-            <ul>
-               <li style="margin-top: 30px;">
-                  <button class="btn-android"><img src="../images/android-icon.png" style="width: 37px; height: 33px; float: left; margin-left:15px;"><span  class="android-text">Download</span></button>
-               </li>
-               <liv>
-                  <button class="btn-ios" style="margin-top: 15px;"><img src="../images/ios-logo.png" style="width: 37px; height: 33px; float: left; margin-left:15px; margin-top: 20;"><span  class="android-text">Download</span></button>
-               </liv>
-            </ul>
-         </div>
-         <div class="col-lg-2 footer-fst" id="footer_fst">
-            <ul>
-               Products
-              <a href="./selectaguide.html"> <li class="footer-gap">Pre-Dental Guide</li></a>
-              <a href="./prepharmacyguide.html"> <li>Pre-Pharmacy Guide</li></a>
-               <a href="./premedicalguide.html"><li>Pre-Medical Guide</li></a>
-               <a href="./preundergradguide.html"><li>Pre-Undergrad Guide</li></a>
-               <a href="./referafreiend.html"><li>Refer A Friend</li></a>
-            </ul>
-            <ul>
-               Other
-               <a href="./termsofuse.html"><li class="footer-gap">Terms of Use</li></a>
-               <a href="./privacypolicy.html"><li>Privacy Policy</li></a>
-            </ul>
-         </div>
-         <div class="col-lg-2 footer-fst">
-            <ul>
-               About Guideology
-               <a href="./missionstatement.html"><li class="footer-gap">Our Mission Statement</li></a>
-               <a href="./studentreviews.html"> <li>Student reviews</li> </a>
-               <a href="./ourteam.html"><li>Our Team</li></a>
-               <li><br></li>
-               <li><br></li>
-            </ul>
-            <ul>
-               Business Inquiries
-               <a href="./contactus.html"><li class="footer-gap">Contact us</li></a>
-               <a href="./collaborate.html"><li>Collaborations</li></a> 
-               <a href="./affiliateprogram.html"> <li>Affiliate Program</li></a>
-            </ul>
-         </div>
-         <div class="col-lg-2 footer-fst">
-            <ul>
-               Support
-               <a href="./contactusforsupport.html"><li class="footer-gap">Contact us</li></a>
-               <a href="./helpcenter.html"><li>Help Center</li></a>
-              <a href="./forum/index.html"> <li>Forums</li> </a>
-               <li><br></li>
-               <li><br></li>
-            </ul>
-            <ul>
-               Social
-               <li class="footer-gap">Tiktok</li>
-               <li>Instagram</li>
-            </ul>
-         </div>
-         <div class="col-lg-3 footer-fst">
-            <ul>
-               Subscribe for Updates
-               <li class="footer-gap">
-                  <input type="text" class="newsletter-box" style="padding: 10px;" placeholder="Phone Number">
-               </li>
-               <li>
-                  <button type="submit" class="subscribe">Subscribe</button>
-               </li>
-            </ul>
-         </div>
-      </div>
-      <div class="row m-3">
-         <div class="col-lg-12 copyright-txt">© 2022 Guideology</div>
-      </div>
+   <!-- Footer start -->
+   <div id="footer">
+
    </div>
    <!-- Footer end-->
 
@@ -291,6 +230,9 @@
    <script src="../js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
    <script src="../js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
    <script src="../js/scripts.js"></script> <!-- Custom scripts -->
+   <script src="../js/affiliate.js"></script> <!-- Custom scripts -->
+   <script src="../js/footer.js"></script>  <!--footer-->
+   <!-- <script src="../js/subscribe.js"></script> -->
 </body>
 
 </html>

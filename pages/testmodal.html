@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
+	<meta property="og:site_name" content="" /> <!-- website name -->
+	<meta property="og:site" content="" /> <!-- website link -->
+	<meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
+	<meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+	<meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+	<meta property="og:type" content="article" />
+
+    <!-- Website Title -->
+    <title>Guideology - For Future Dental Students</title>
+    
+    <!-- Styles -->
+    <link href='http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css' rel='stylesheet' type='text/css'> 
+   
+	<style type="text/css">
+        table {
+  margin: 0 auto;
+  text-align: center;
+  border-collapse: collapse;
+  border: 1px solid #d4d4d4;
+  font-size: 20px;
+  background: #fff;
+}
+ 
+table th, 
+table tr:nth-child(2n+2) {
+  background: #e7e7e7;
+}
+  
+table th, 
+table td {
+  padding: 20px 50px;
+}
+  
+table th {
+  border-bottom: 1px solid #d4d4d4;
+}
+.stars-outer {
+  display: inline-block;
+  position: relative;
+  font-family: 'FontAwesome';
+}
+ 
+.stars-outer::before {
+  content: "\f006 \f006 \f006 \f006 \f006";
+color: #5680E9;
+
+}
+ 
+.stars-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+}
+ 
+.stars-inner::before {
+  content: "\f005 \f005 \f005 \f005 \f005";
+  color: #5680E9;
+;
+}
+
+.stars-outer::before {
+  content: "\f006 \f006 \f006 \f006 \f006";
+}
+ 
+.stars-inner::before {
+  content: "\f005 \f005 \f005 \f005 \f005";
+}
+.stars-inner {
+  width: 0;
+}
+
+      </style>
+</head>
+<body data-spy="scroll" data-target=".fixed-top">
+    
+  <table>
+    <thead>
+       <tr>
+         <th>Hotel</th>
+         <th>Rating</th>
+       </tr>
+     </thead>
+     <tbody>
+       <tr class="hotel_a">
+         <td>Hotel A</td>
+         <td>
+           <div class="stars-outer">
+             <div class="stars-inner"></div>
+           </div>
+         </td>
+       </tr>
+       <tr class="hotel_b">
+         <td>Hotel B</td>
+         <td>
+           <div class="stars-outer">
+             <div class="stars-inner"></div>
+           </div>
+         </td>
+       </tr>
+       <tr class="hotel_c">
+         <td>Hotel C </td>
+         <td>
+           <div class="stars-outer">
+             <div class="stars-inner"></div>
+           </div>
+         </td>
+       </tr>
+       <tr class="hotel_d">
+         <td>Hotel D </td>
+         <td>
+           <div class="stars-outer">
+             <div class="stars-inner"></div>
+           </div>
+         </td>
+       </tr>
+       <tr class="hotel_e">
+         <td>Hotel E </td>
+         <td>
+           <div class="stars-outer">
+             <div class="stars-inner"></div>
+           </div>
+         </td>
+       </tr>
+    
+       <!-- 3 more rows here -->
+        
+     </tbody>
+   </table>
+<!-- Footer end-->
+    <!-- Scripts -->
+    <script src="../js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="../js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
+    <script src="../js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="../js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="../js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="../js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
+    <script src="../js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
+    <script src="../js/scripts.js"></script> <!-- Custom scripts -->
+    <script src="../js/reviews.js"></script>
+    <script src="../js/footer.js"></script>
+    <script>
+      const ratings = {
+  hotel_a : 0,
+  hotel_b : 3.3,
+  hotel_c : 1.9,
+  hotel_d : 4.3,
+  hotel_e : 4.74
+};
+
+const starTotal = 5;
+ 
+for(const rating in ratings) {  
+  // 2
+  const starPercentage = (ratings[rating] / starTotal) * 100;
+  // 3
+  const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
+  // 4
+  document.querySelector(`.${rating} .stars-inner`).style.width = starPercentageRounded; 
+}
+    </script>
+    <script src="../js/subscribe.js"></script>
+</body>
+</html>

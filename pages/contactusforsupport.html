@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Tivo is a HTML landing page template built with Bootstrap to help you crate engaging presentations for SaaS apps and convert visitors into users.">
-    <meta name="author" content="Inovatik">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
     <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
 	<meta property="og:site_name" content="" /> <!-- website name -->
@@ -22,7 +22,8 @@
     
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext" rel="stylesheet">
-      <link href="../css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"> 
+    <link href="../css/bootstrap.css" rel="stylesheet">
       <link href="../css/fontawesome-all.css" rel="stylesheet">
       <link href="../css/swiper.css" rel="stylesheet">
       <link href="../css/magnific-popup.css" rel="stylesheet">
@@ -30,9 +31,9 @@
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
               <!-- Firebase -->
 <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-firestore.js"></script>
-       <script>
+<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-database.js"></script>
+       <!-- <script>
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
   // Your web app's Firebase configuration
@@ -49,8 +50,8 @@
   };
 
   // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-</script>
+ const db = firebase.initializeApp(firebaseConfig);
+</script> -->
 	<!-- Favicon  -->
     <link rel="icon" href="../images/icon.png">
 	<style type="text/css">
@@ -99,120 +100,51 @@
 	<div class="container form-box-su" id="login_formbox">
 	<div class="inner-box-su">
 			<h1 style="font-size: 24px;" id="contactus_heading">Need Help? Message us below</h1>
-         <form action="#" onsubmit="onSubmit()">
+         <form onsubmit="return false" id="contactusforSupport">
             <div class="form-row">
               <div class="form-group col-12">
+               <input type="hidden" id='hiddenId' />
                 <label class="uname">Full Name</label>
-                <input type="text" class="form-control uname-box" id="full_name" aria-describedby="emailHelp" placeholder="Full Name">
+                <input type="text" class="form-control uname-box" id="full_name" aria-describedby="emailHelp" placeholder="Full Name" required>
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-12">
                 <label class="uname">Email</label>
-                <input type="email" class="form-control uname-box" id="email" aria-describedby="emailHelp" placeholder="Email">
+                <input type="email" class="form-control uname-box" id="email" aria-describedby="emailHelp" placeholder="Email" required>
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-12">
                 <label class="uname">Subject</label>
-                <input type="text" class="form-control uname-box" id="subject" aria-describedby="emailHelp" placeholder="Subject">
+                <input type="text" class="form-control uname-box" id="subject" aria-describedby="emailHelp" placeholder="Subject" required>
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-12">
                 <label class="uname">Phone #</label>
-                <input type="number" class="form-control uname-box" id="phone_number" aria-describedby="emailHelp" placeholder="Phone #">
+                <input type="number" class="form-control uname-box" id="phone_number" aria-describedby="emailHelp" placeholder="Phone #" required>
               </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-12">
                     <label for="exampleFormControlTextarea1" class="uname">Message</label>
-                    <textarea class="form-control uname-box" id="textarea" rows="5" placeholder="Type your message..."></textarea>
+                    <textarea class="form-control uname-box" id="textarea" rows="5" placeholder="Type your message..." required></textarea>
                   </div>
             </div>
-              <button type="submit" class="btn btn-primary long-btn-su" onclick="contactUs()">Submit</button>
+              <button type="submit" class="btn btn-primary long-btn-su">Submit</button>
+              <p style="font-size: 12px; color: #5680E9;" id="contactusforSupport_para"></p>
             </form>
 		
 		
 	</div>
 	</div>
-		<!-- Footer start -->
-      <div id="footer-fix-id" style="max-width: 1920px; margin-top: 160px">
-         <div class="row g2 footer-og m-3" style="margin: 100px 0px;">
-            <div class="col-lg-2 footer-fst">
-              <a href="../index.html"><img src="../images/footerlogo.png"> </a>
-               <ul>
-                  <li style="margin-top: 30px;">
-                     <button class="btn-android"><img src="../images/android-icon.png" style="width: 37px; height: 33px; float: left; margin-left:15px;"><span  class="android-text">Download</span></button>
-                  </li>
-                  <liv>
-                     <button class="btn-ios" style="margin-top: 15px;"><img src="../images/ios-logo.png" style="width: 37px; height: 33px; float: left; margin-left:15px; margin-top: 20;"><span  class="android-text">Download</span></button>
-                  </liv>
-               </ul>
-            </div>
-            <div class="col-lg-2 footer-fst" id="footer_fst">
-               <ul>
-                  Products
-                 <a href="./selectaguide.html"> <li class="footer-gap">Pre-Dental Guide</li></a>
-                 <a href="./prepharmacyguide.html"> <li>Pre-Pharmacy Guide</li></a>
-                  <a href="./premedicalguide.html"><li>Pre-Medical Guide</li></a>
-                  <a href="./preundergradguide.html"><li>Pre-Undergrad Guide</li></a>
-                  <a href="./referafreiend.html"><li>Refer A Friend</li></a>
-               </ul>
-               <ul>
-                  Other
-                  <a href="./termsofuse.html"><li class="footer-gap">Terms of Use</li></a>
-                  <a href="./privacypolicy.html"><li>Privacy Policy</li></a>
-               </ul>
-            </div>
-            <div class="col-lg-2 footer-fst">
-               <ul>
-                  About Guideology
-                  <a href="./missionstatement.html"><li class="footer-gap">Our Mission Statement</li></a>
-                  <a href="./studentreviews.html"> <li>Student reviews</li> </a>
-                  <a href="./ourteam.html"><li>Our Team</li></a>
-                  <li><br></li>
-                  <li><br></li>
-               </ul>
-               <ul>
-                  Business Inquiries
-                  <a href="./contactus.html"><li class="footer-gap">Contact us</li></a>
-                  <a href="./collaborate.html"><li>Collaborations</li></a> 
-                  <a href="./affiliateprogram.html"> <li>Affiliate Program</li></a>
-               </ul>
-            </div>
-            <div class="col-lg-2 footer-fst">
-               <ul>
-                  Support
-                  <a href="./contactusforsupport.html"><li class="footer-gap">Contact us</li></a>
-                  <a href="./helpcenter.html"><li>Help Center</li></a>
-                 <a href="./forum/index.html"> <li>Forums</li> </a>
-                  <li><br></li>
-                  <li><br></li>
-               </ul>
-               <ul>
-                  Social
-                  <li class="footer-gap">Tiktok</li>
-                  <li>Instagram</li>
-               </ul>
-            </div>
-            <div class="col-lg-3 footer-fst">
-               <ul>
-                  Subscribe for Updates
-                  <li class="footer-gap">
-                     <input type="text" class="newsletter-box" style="padding: 10px;" placeholder="Phone Number">
-                  </li>
-                  <li>
-                     <button type="submit" class="subscribe">Subscribe</button>
-                  </li>
-               </ul>
-            </div>
-         </div>
-         <div class="row m-3">
-            <div class="col-lg-12 copyright-txt">© 2022 Guideology</div>
-         </div>
-      </div>
-      <!-- Footer end-->
+		
+ 	<!-- Footer start -->
+    <div id="footer">
+
+   </div>
+   <!-- Footer end-->
     <!-- Scripts -->
     <script src="../js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
     <script src="../js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
@@ -222,6 +154,8 @@
     <script src="../js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
     <script src="../js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
     <script src="../js/scripts.js"></script> <!-- Custom scripts -->
-    <script src="../js/db.js"></script>
+    <script src="../js/contactusforsupport.js"></script>
+    <script src="../js/footer.js"></script>
+    <script src="../js/subscribe.js"></script>
 </body>
 </html>
